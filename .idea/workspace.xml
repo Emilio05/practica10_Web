@@ -2,38 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76c5fa1d-49b8-42dc-8dc6-86251357662f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_h2database_h2_1_4_197.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jayway_jsonpath_json_path_2_4_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__net_bytebuddy_byte_buddy_1_7_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__net_bytebuddy_byte_buddy_agent_1_7_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__net_minidev_accessors_smart_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__net_minidev_json_smart_2_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_assertj_assertj_core_3_9_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_mockito_mockito_core_2_15_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_objenesis_objenesis_2_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_ow2_asm_asm_5_0_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_skyscreamer_jsonassert_1_5_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_security_2_0_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_test_2_0_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_test_2_0_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_test_autoconfigure_2_0_5_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_security_spring_security_config_5_0_8_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_security_spring_security_core_5_0_8_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_security_spring_security_test_5_0_8_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_security_spring_security_web_5_0_8_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_test_5_0_9_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_xmlunit_xmlunit_core_2_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/inventarioequipos_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/inventarioequipos_main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/inventarioequipos_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/inventarioequipos_test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/pucmm/inventarioequipos/model/FacturaEquipo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pucmm/inventarioequipos/model/FacturaEquipo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/pucmm/inventarioequipos/model/Rol.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pucmm/inventarioequipos/model/Rol.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/pucmm/inventarioequipos/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pucmm/inventarioequipos/model/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/pucmm/inventarioequipos/service/FacturaEquipoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pucmm/inventarioequipos/service/FacturaEquipoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/model/Rol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/model/Rol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/ClienteEquipoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/ClienteEquipoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/EquipoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/EquipoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/FacturaEquipoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/FacturaEquipoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/ClienteEquipoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/ClienteEquipoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/ClienteEquipoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/ClienteEquipoServiceImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -66,99 +46,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ClienteService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/ClienteService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" selection-start-line="11" selection-end-line="18" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClienteServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/ClienteServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="716">
-              <caret line="43" lean-forward="true" selection-start-line="10" selection-end-line="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#530#531#0" expanded="true" />
-                <element signature="e#561#562#0" expanded="true" />
-                <element signature="e#622#623#0" expanded="true" />
-                <element signature="e#639#640#0" expanded="true" />
-                <element signature="e#697#698#0" expanded="true" />
-                <element signature="e#729#730#0" expanded="true" />
-                <element signature="e#780#781#0" expanded="true" />
-                <element signature="e#812#813#0" expanded="true" />
-                <element signature="e#866#867#0" expanded="true" />
-                <element signature="e#915#916#0" expanded="true" />
-                <element signature="e#1006#1007#0" expanded="true" />
-                <element signature="e#1065#1066#0" expanded="true" />
-                <element signature="e#1046#1047#0" expanded="true" />
-                <element signature="e#1085#1086#0" expanded="true" />
-                <element signature="e#1151#1152#0" expanded="true" />
-                <element signature="e#1215#1216#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClienteRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/ClienteRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="27" selection-start-line="10" selection-end-line="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClienteEquipoRepository.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ClienteEquipoRepository.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/ClienteEquipoRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="289">
+              <caret line="17" column="127" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="17" selection-end-column="127" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClienteEquipoService.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/ClienteEquipoService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="59" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClienteEquipoServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/ClienteEquipoServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#354#355#0" expanded="true" />
-                <element signature="e#391#392#0" expanded="true" />
-                <element signature="e#436#437#0" expanded="true" />
-                <element signature="e#484#485#0" expanded="true" />
-                <element signature="e#526#527#0" expanded="true" />
-                <element signature="e#571#572#0" expanded="true" />
-                <element signature="e#619#620#0" expanded="true" />
-                <element signature="e#669#670#0" expanded="true" />
-                <element signature="e#724#725#0" expanded="true" />
-                <element signature="e#783#784#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -613,22 +507,18 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/InventarioequiposApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/model/Cliente.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/model/Rol.java" />
         <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/model/Categoria.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/model/Usuario.java" />
         <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/model/FacturaEquipoId.java" />
         <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/model/Alquiler.java" />
         <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/model/Equipo.java" />
         <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/model/Factura.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/config/ConfiguracionSeguridad.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/model/ClienteEquipo.java" />
         <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/ClienteServices.java" />
         <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/ClienteService.java" />
         <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/ClienteRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/ClienteServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/EquipoRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/EquipoService.java" />
         <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/EquipoServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/UsuarioRepository.java" />
@@ -644,14 +534,18 @@
         <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/CategoriaService.java" />
         <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/CategoriaServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/model/FacturaEquipo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/AlquilerRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/ClienteEquipo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/EquipoRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/FacturaEquipoRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/FacturaEquipoService.java" />
         <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/FacturaEquipoServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/AlquilerRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/ClienteEquipoRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/ClienteEquipo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/ClienteEquipoServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/ClienteEquipoService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/ClienteEquipoServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/model/Usuario.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/model/Rol.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/ClienteEquipoRepository.java" />
       </list>
     </option>
   </component>
@@ -850,12 +744,12 @@
       <updated>1537571620770</updated>
       <workItem from="1537571759128" duration="2661000" />
       <workItem from="1539197355364" duration="30119000" />
-      <workItem from="1539259965370" duration="23279000" />
+      <workItem from="1539259965370" duration="35782000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56059000" />
+    <option name="totallyTimeSpent" value="68562000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -880,7 +774,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33333334" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33333334" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22750643" />
@@ -900,7 +794,7 @@
       <window_info anchor="bottom" id="Build" order="7" weight="0.3292683" />
       <window_info id="Designer" order="2" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33333334" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33333334" />
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -921,7 +815,7 @@
       <window_info anchor="bottom" id="Version Control" order="14" />
       <window_info anchor="right" id="Maven Projects" order="5" />
       <window_info anchor="right" id="Gradle" order="10" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22750643" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.22750643" />
       <window_info anchor="right" id="Database" order="6" weight="0.3104113" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Web" order="7" side_tool="true" />
@@ -1092,16 +986,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/model/Rol.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/model/Categoria.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
@@ -1160,33 +1044,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-825">
           <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="28" column="26" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/model/Usuario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/EquipoRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1382,62 +1239,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/CategoriaRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="35" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/FacturaEquipoServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#525#526#0" expanded="true" />
-            <element signature="e#572#573#0" expanded="true" />
-            <element signature="e#624#625#0" expanded="true" />
-            <element signature="e#661#662#0" expanded="true" />
-            <element signature="e#848#849#0" expanded="true" />
-            <element signature="e#882#883#0" expanded="true" />
-            <element signature="e#796#797#0" expanded="true" />
-            <element signature="e#841#842#0" expanded="true" />
-            <element signature="e#889#890#0" expanded="true" />
-            <element signature="e#939#940#0" expanded="true" />
-            <element signature="e#994#995#0" expanded="true" />
-            <element signature="e#1053#1054#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/FacturaEquipoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/model/Cliente.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1071">
           <caret line="87" column="30" selection-start-line="87" selection-start-column="30" selection-end-line="87" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/FacturaEquipoRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1496,16 +1301,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/ClienteEquipoRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/ClienteServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="716">
@@ -1532,30 +1327,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/ClienteEquipoServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/CategoriaRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#354#355#0" expanded="true" />
-            <element signature="e#391#392#0" expanded="true" />
-            <element signature="e#436#437#0" expanded="true" />
-            <element signature="e#484#485#0" expanded="true" />
-            <element signature="e#526#527#0" expanded="true" />
-            <element signature="e#571#572#0" expanded="true" />
-            <element signature="e#619#620#0" expanded="true" />
-            <element signature="e#669#670#0" expanded="true" />
-            <element signature="e#724#725#0" expanded="true" />
-            <element signature="e#783#784#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/EquipoRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/FacturaEquipoServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="66" lean-forward="true" selection-start-line="6" selection-start-column="66" selection-end-line="6" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/FacturaEquipoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/ClienteEquipoService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="59" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
+        <state relative-caret-position="289">
+          <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/ClienteEquipoServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="46" column="60" selection-start-line="46" selection-start-column="60" selection-end-line="46" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1496#1497#0" expanded="true" />
+            <element signature="e#1541#1542#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/FacturaEquipoRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/model/Usuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="26" selection-start-line="26" selection-end-line="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/model/Rol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="22" selection-start-line="22" selection-end-line="24" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="38" column="36" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/ClienteEquipoRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="127" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="17" selection-end-column="127" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

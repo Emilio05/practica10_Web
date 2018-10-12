@@ -38,4 +38,13 @@ public class ClienteEquipoServiceImpl implements ClienteEquipoService {
     public boolean clienteEquipoExiste(ClienteEquipo clienteEquipo){
         return buscarPorId(clienteEquipo.getId()) != null;
     }
+
+    public List<Object[]> equiposAlquiladosNoDevueltos(){
+        return clienteEquipoRepository.equiposAlquiladosNoDevueltos();
+    }
+
+    public List<Object[]> historialCliente(long id){
+        return clienteEquipoRepository.historialCliente(id);
+    }
+
 }

@@ -24,9 +24,11 @@ public class Usuario implements Serializable {
     @Column(name = "email")
     private String email;
 
-    @OneToMany(  mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
-    @LazyCollection(LazyCollectionOption.FALSE)
-    private List<Rol> roles = new ArrayList<>();
+    @ManyToOne(fetch = FetchType.EAGER, optional = true)
+    @JoinColumn(name = "rol_id", nullable = true, updatable = false)
+    private Rol rol;
+
+
 
 
     private boolean deleted = false;

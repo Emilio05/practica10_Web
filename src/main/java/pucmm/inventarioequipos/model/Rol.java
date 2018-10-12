@@ -1,9 +1,13 @@
 package pucmm.inventarioequipos.model;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Where(clause = "deleted = 0")
@@ -16,9 +20,9 @@ public class Rol implements Serializable {
     @Column(name = "nombreRol")
     private String nombreRol;
 
-    @ManyToOne(fetch = FetchType.EAGER, optional = true)
-    @JoinColumn(name = "usuario_id", nullable = true, updatable = false)
-    private Usuario usuario;
+    @OneToMany(  mappedBy = "rol", cascade = CascadeType.ALL, orphanRemoval = true)
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private List<Usuario> usuarios = new ArrayList<>();
 
     private boolean deleted = false;
 
