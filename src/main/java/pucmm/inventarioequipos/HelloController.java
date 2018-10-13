@@ -21,6 +21,7 @@ public class HelloController {
         return "hello";
     }
 
+
     @GetMapping("/usuarios")
     public String usuarios(Model model)
     {
@@ -30,23 +31,6 @@ public class HelloController {
         return "usuarios";
     }
 
-    @GetMapping("/equipos")
-    public String equipos(Model model)
-    {
-        List<String> equipos = new ArrayList<>();
-
-        model.addAttribute("equipos",equipos);
-        return "equipos";
-    }
-
-    @GetMapping("/clientes")
-    public String clientes(Model model)
-    {
-        List<String> clientes = new ArrayList<>();
-
-        model.addAttribute("clientes",clientes);
-        return "clientes";
-    }
 
     @GetMapping("/facturacion")
     public String facturacion(Model model)
