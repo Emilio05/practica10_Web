@@ -6,6 +6,7 @@ import pucmm.inventarioequipos.model.Cliente;
 import pucmm.inventarioequipos.repository.ClienteRepository;
 
 import javax.transaction.Transactional;
+import java.util.Date;
 import java.util.List;
 
 @Service("clienteService")
@@ -15,11 +16,11 @@ public class ClienteServiceImpl implements ClienteService {
     @Autowired
     private ClienteRepository clienteRepository;
 
-    public void crearCliente(Cliente cliente){
-        clienteRepository.save(cliente);
+    public void crearCliente(String nombre, String cedula, Date fechaNacimiento){
+        clienteRepository.save(new Cliente(nombre, cedula, fechaNacimiento));
     }
     public void actualizarCliente(Cliente cliente){
-        crearCliente(cliente);
+        clienteRepository.save(cliente);
     }
     public void borrarClientePorId(long id){
         clienteRepository.deleteById(id);

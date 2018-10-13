@@ -14,10 +14,10 @@
                             <hr>
                         </div>
                         <div class="panel-body">
-							<div class="row">
+
 
                                 <button class="btn btn-primary" data-toggle="modal" data-target="#modalClientes">Crear Cliente</button>
-								<form enctype='multipart/form-data'>
+								<form method="POST" action="/clientes"  enctype='multipart/form-data'>
                                     <div class="modal fade" id="modalClientes" tabindex="-1" role="dialog" aria-labelledby="modalClientesLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
@@ -36,24 +36,21 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                                    <button type="button" class="btn btn-primary">Guardar</button>
+                                                    <input type="submit" value="Guardar" class="btn btn-primary" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </form>
-							</div>
-							<!-- END REALTIME CHART -->
-						</div>
 
-                        <div class="table-responsive">
-                            <table id="clientstable" class="table table-striped table-bordered table-condensed table-hover table-sm">
-                                <thead>
-                                <th class="text-center">Cedula</th>
-                                <th class="text-center">Nombre</th>
-                                <th class="text-center">Apellido</th>
-                                <th class="text-center">Fecha Nacimiento</th>
-                                <th class="text-center">Opciones</th>
+                            <div class="table-responsive">
+                                <table id="clientstable" class="table table-striped table-bordered table-condensed table-hover table-sm">
+                                    <thead>
+                                    <th class="text-center">Cedula</th>
+                                    <th class="text-center">Nombre</th>
+                                    <th class="text-center">Apellido</th>
+                                    <th class="text-center">Fecha Nacimiento</th>
+                                    <th class="text-center">Opciones</th>
 
 
                                 <#list clientes as cliente>
@@ -75,8 +72,13 @@
 
                                 </tr>
                                 </#list>
-                            </table>
-                        </div>
+                                </table>
+                            </div>
+
+							<!-- END REALTIME CHART -->
+						</div>
+
+
 
                     </div>
 				</div>

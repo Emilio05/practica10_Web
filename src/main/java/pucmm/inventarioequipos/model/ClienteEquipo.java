@@ -16,6 +16,46 @@ public class ClienteEquipo implements Serializable {
     private Date fechaInicioAlquiler;
     @Column(name = "fechaFinAlquiler")
     private Date fechaFinAlquiler;
+    @Column(name = "cantidad")
+    private int cantidad;
+    @Column(name = "costo")
+    private float costo;
+    @Column(name = "subtotal")
+    private float subtotal;
+    @Column(name = "total")
+    private float total;
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public float getCosto() {
+        return costo;
+    }
+
+    public void setCosto(float costo) {
+        this.costo = costo;
+    }
+
+    public float getSubtotal() {
+        return subtotal;
+    }
+
+    public void setSubtotal(float subtotal) {
+        this.subtotal = subtotal;
+    }
+
+    public float getTotal() {
+        return total;
+    }
+
+    public void setTotal(float total) {
+        this.total = total;
+    }
 
     public Date getFechaInicioAlquiler() {
         return fechaInicioAlquiler;

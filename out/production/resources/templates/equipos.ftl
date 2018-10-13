@@ -15,8 +15,6 @@
                         </div>
 
 						<div class="panel-body">
-							<div class="row">
-
                                 <button class="btn btn-primary" data-toggle="modal" data-target="#modalEquipo">Crear Equipo</button>
 								<form>
                                     <div class="modal fade" id="modalEquipo" tabindex="-1" role="dialog" aria-labelledby="modalEquipoLabel" aria-hidden="true">
@@ -43,17 +41,16 @@
                                         </div>
                                     </div>
                                 </form>
-							</div>
+
 							<!-- END REALTIME CHART -->
-						</div>
-                        <div class="table-responsive">
-                            <table id="clientstable" class="table table-striped table-bordered table-condensed table-hover table-sm">
-                                <thead>
-                                <th class="text-center">Codigo</th>
-                                <th class="text-center">Nombre de Equipo</th>
-                                <th class="text-center">Precio</th>
-                                <th class="text-center">Existencia</th>
-                                <th class="text-center">Opciones</th>
+                            <div class="table-responsive">
+                                <table id="clientstable" class="table table-striped table-bordered table-condensed table-hover table-sm">
+                                    <thead>
+                                    <th class="text-center">Codigo</th>
+                                    <th class="text-center">Nombre de Equipo</th>
+                                    <th class="text-center">Precio</th>
+                                    <th class="text-center">Existencia</th>
+                                    <th class="text-center">Opciones</th>
 
 
                                 <#list equipos as equipo>
@@ -75,8 +72,10 @@
 
                                 </tr>
                                 </#list>
-                            </table>
-                        </div>
+                                </table>
+                            </div>
+						</div>
+
 					</div>
 				</div>
 			</div>

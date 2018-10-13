@@ -36,6 +36,14 @@ public class Cliente implements Serializable {
 
     private boolean deleted = false;
 
+    public  Cliente(){
+
+    }
+    public Cliente(String cedula, String nombre, Date fechaNacimiento) {
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.fechaNacimiento = fechaNacimiento;
+    }
 
     public long getId() {
         return id;
