@@ -31,6 +31,9 @@
 
                                                     <input type="password" class="form-control" id="password" name="password" placeholder="Contrasena">
                                                     <input type="email" class="form-control" id="email" name="email" placeholder="E-Mail">
+                                                    <div class="form-group"> <!-- Date input -->
+                                                        <input data-provide="datepicker" data-date-autoclose="true" class="form-control" data-date-format="dd-mm-yyyy">
+                                                    </div>
 
                                                 </div>
                                                 <div class="modal-footer">
@@ -86,5 +89,7 @@
 		</div>
 	<!-- END WRAPPER -->
 </body>
-
+<script>
+    $('.datepicker').datepicker({format: "dd-mm-yyyy"});
+</script>
 </html>

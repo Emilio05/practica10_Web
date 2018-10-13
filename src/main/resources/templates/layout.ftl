@@ -20,6 +20,7 @@
     <!-- ICONS -->
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
     <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
+
 </head>
 
 <body>
@@ -75,6 +76,7 @@
     <script src="assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
     <script src="assets/vendor/chartist/js/chartist.min.js"></script>
     <script src="assets/scripts/klorofil-common.js"></script>
+    <script src="assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"
     <script>
     $(function() {
         var data, options;
