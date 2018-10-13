@@ -16,3 +16,6 @@ gradle-app.setting
 out/production/resources/public/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js
 out/production/resources/templates/equipos.ftl
 out/production/resources/templates/layout.ftl
+.idea/workspace.xml
+out/production/resources/templates/equipos.ftl
+out/production/resources/templates/layout.ftl
