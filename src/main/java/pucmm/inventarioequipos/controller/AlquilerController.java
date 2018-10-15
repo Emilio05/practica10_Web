@@ -15,18 +15,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
+@RequestMapping("/alquiler")
 public class AlquilerController {
 
 
     @Autowired
     private ClienteEquipoServiceImpl clienteEquipoService;
 
-    @GetMapping("/alquiler")
+    @GetMapping(value = "/")
     public String alquiler(Model model)
     {
-        List<ClienteEquipo> alquiler = new ArrayList<>();
-        alquiler = clienteEquipoService.buscarTodosClientesEquipos();
-        model.addAttribute("alquiler", alquiler);
         return "alquiler";
     }
 

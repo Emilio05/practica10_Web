@@ -13,12 +13,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
+@RequestMapping("/usuarios")
 public class UsuariosController {
 
     @Autowired
     private UsuarioServiceImpl usuarioService;
 
-    @GetMapping("/usuarios")
+    @GetMapping(value="/")
     public String usuarios(Model model)
     {
         List<Usuario> usuarios = new ArrayList<>();
@@ -26,4 +27,5 @@ public class UsuariosController {
         model.addAttribute("usuarios", usuarios);
         return "usuarios";
     }
+
 }

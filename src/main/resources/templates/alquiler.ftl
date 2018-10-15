@@ -10,7 +10,7 @@
 					<!-- OVERVIEW -->
 					<div class="panel panel-headline">
 						<div class="panel-heading">
-							<h3 class="panel-title">Usuarios</h3>
+							<h3 class="panel-title">Alquiler</h3>
                             <hr>
                         </div>
 
