@@ -1,5 +1,5 @@
 
-<#import "layout.ftl" as layout>
+<#include "layout.ftl">
 <!-- MAIN -->
 <div class="main">
     <!-- MAIN CONTENT -->

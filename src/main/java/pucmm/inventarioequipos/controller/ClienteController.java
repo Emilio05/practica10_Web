@@ -4,6 +4,7 @@ package pucmm.inventarioequipos.controller;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.hibernate.event.spi.SaveOrUpdateEvent;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -45,12 +46,12 @@ public class ClienteController {
         model.addAttribute("clientes",clientes);
         return "clientes";
     }
-    @RequestMapping(value = "/historialclientes/{id}")
-    public String historialClientes(Model model, @PathVariable String id)
+    @RequestMapping(value = "/historial/{id}", method = RequestMethod.GET)
+    public String historial(Model model, @PathVariable String id)
     {
        Cliente cliente = clienteService.buscarPorId(Long.parseLong(id));
         model.addAttribute("cliente", cliente);
-        return "historialclientes";
+        return "historial";
     }
 
     @PostMapping(value = "/")
@@ -86,29 +87,14 @@ public class ClienteController {
         return "redirect:/clientes";
     }
 
-//
-//   @GetMapping("cliente/ver/{id}")
-//   public String historialCliente(Model model, @PathVariable String id){
-//
-//
-//        Cliente cliente = clienteService.buscarPorId(Long.parseLong(id));
-//        model.addAttribute("cliente", cliente);
-//        return "historialCliente";
-//   }
-//    @RequestMapping(value = "/cliente/ver/{id}")
-//    public String historialCliente(@PathVariable String id , Model model) {
-//        Cliente cliente = clienteService.buscarPorId(Long.parseLong(id));
-//        model.addAttribute("cliente", cliente);
-//        return "historialCliente";
-//
-//    }
+
 
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String borrarCliente(@PathVariable String id) {
         Cliente cliente = clienteService.buscarPorId(Long.parseLong(id));
         clienteService.borrarClientePorId(cliente);
-        return "redirect:/clientes";
+        return "redirect:/clientes/";
 
     }
 
