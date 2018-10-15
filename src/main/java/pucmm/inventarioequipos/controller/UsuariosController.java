@@ -5,7 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pucmm.inventarioequipos.model.Equipo;
+import pucmm.inventarioequipos.model.Usuario;
 import pucmm.inventarioequipos.service.EquipoServiceImpl;
+import pucmm.inventarioequipos.service.UsuarioServiceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,34 +16,14 @@ import java.util.List;
 public class UsuariosController {
 
     @Autowired
-    private EquipoServiceImpl equipoService;
+    private UsuarioServiceImpl usuarioService;
 
-//    @GetMapping("/equipos")
-//    public String equipos(Model model)
-//    {
-//        List<Equipo> equipos = new ArrayList<>();
-//        equipos = equipoService.buscarTodosEquipos();
-//        model.addAttribute("equipos", equipos);
-//        return "equipos";
-//    }
-//
-//    @PostMapping("/equipos")
-//    public String agregarEquipo(Equipo equipo, Model model) {
-//        model.addAttribute("equipos", equipo);
-//        return "equipos";
-////    }
-//    @RequestMapping("/equipo/{id}")
-//    public Equipo obtenerEquipo(@PathVariable int id){
-//        return equipoService.buscarPorId(id);
-//    }
-
-
-
-//    @RequestMapping(value = "/cliente", method = RequestMethod.PUT)
-//    public String agregarCliente(@RequestParam int id, @RequestParam String nombre){
-//        Estudiante estudiante = new Estudiante(matricula);
-//        estudiante.setNombre(nombre);
-//        return ""+estudiante.getMatricula();
-//    }
-
+    @GetMapping("/usuarios")
+    public String usuarios(Model model)
+    {
+        List<Usuario> usuarios = new ArrayList<>();
+        usuarios = usuarioService.buscarTodosUsuarios();
+        model.addAttribute("usuarios", usuarios);
+        return "usuarios";
+    }
 }
