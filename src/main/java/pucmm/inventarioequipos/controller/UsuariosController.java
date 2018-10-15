@@ -16,29 +16,26 @@ public class UsuariosController {
     @Autowired
     private EquipoServiceImpl equipoService;
 
-    @GetMapping("/equipos")
-    public String equipos(Model model)
-    {
-        List<Equipo> equipos = new ArrayList<>();
-        equipos = equipoService.buscarTodosEquipos();
-        model.addAttribute("equipos", equipos);
-        return "equipos";
-    }
+//    @GetMapping("/equipos")
+//    public String equipos(Model model)
+//    {
+//        List<Equipo> equipos = new ArrayList<>();
+//        equipos = equipoService.buscarTodosEquipos();
+//        model.addAttribute("equipos", equipos);
+//        return "equipos";
+//    }
+//
+//    @PostMapping("/equipos")
+//    public String agregarEquipo(Equipo equipo, Model model) {
+//        model.addAttribute("equipos", equipo);
+//        return "equipos";
+////    }
+//    @RequestMapping("/equipo/{id}")
+//    public Equipo obtenerEquipo(@PathVariable int id){
+//        return equipoService.buscarPorId(id);
+//    }
 
-    @PostMapping("/equipos")
-    public String agregarEquipo(Equipo equipo, Model model) {
-        model.addAttribute("equipos", equipo);
-        return "equipos";
-    }
-    @RequestMapping("/equipo/{id}")
-    public Equipo obtenerEquipo(@PathVariable int id){
-        return equipoService.buscarPorId(id);
-    }
 
-    @DeleteMapping("/equipo/{id}")
-    public void borrarEquipo(@PathVariable long id) {
-        equipoService.borrarEquipoPorId(id);
-    }
 
 //    @RequestMapping(value = "/cliente", method = RequestMethod.PUT)
 //    public String agregarCliente(@RequestParam int id, @RequestParam String nombre){

@@ -1,5 +1,6 @@
 
 <#import "layout.ftl" as layout>
+<@layout.pagina>
 <!-- MAIN -->
 <div class="main">
     <!-- MAIN CONTENT -->
@@ -30,3 +31,4 @@
 </div>
 </div>
 <!-- END WRAPPER -->
+</@layout.pagina>

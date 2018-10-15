@@ -33,15 +33,7 @@ public class AlquilerController {
         model.addAttribute("equipos", alquiler);
         return "alquiler";
     }
-    @RequestMapping("/equipo/{id}")
-    public Equipo obtenerEquipo(@PathVariable int id){
-        return equipoService.buscarPorId(id);
-    }
 
-    @DeleteMapping("/equipo/{id}")
-    public void borrarEquipo(@PathVariable long id) {
-        equipoService.borrarEquipoPorId(id);
-    }
 
 //    @RequestMapping(value = "/cliente", method = RequestMethod.PUT)
 //    public String agregarCliente(@RequestParam int id, @RequestParam String nombre){

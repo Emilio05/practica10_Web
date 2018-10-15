@@ -28,6 +28,7 @@ import java.util.List;
 import java.util.Locale;
 
 @Controller
+@RequestMapping("/clientes")
 public class ClienteController {
 
     private static String UPLOADED_FOLDER = "C://Users//EmilioFerreiras//Desktop//";
@@ -36,7 +37,7 @@ public class ClienteController {
     @Autowired
     private ClienteServiceImpl clienteService;
 
-    @GetMapping("/clientes")
+    @RequestMapping(value = "/")
     public String clientes(Model model)
     {
         List<Cliente> clientes = new ArrayList<>();
@@ -44,8 +45,15 @@ public class ClienteController {
         model.addAttribute("clientes",clientes);
         return "clientes";
     }
+    @RequestMapping(value = "/historialclientes/{id}")
+    public String historalClientes(Model model, @PathVariable("id") long id)
+    {
+       Cliente cliente = clienteService.buscarPorId(id);
+        model.addAttribute("cliente",cliente);
+        return "historialclientes";
+    }
 
-    @PostMapping("clientes")
+    @PostMapping(value = "/")
     public String crearCliente(@RequestParam("foto") MultipartFile foto, @RequestParam("nombre") String nombre, @RequestParam("apellido") String apellido, @RequestParam("cedula") String cedula,
                                @RequestParam("fechaNacimiento") String fechaNacimiento,
                                RedirectAttributes redirectAttributes) {
@@ -95,7 +103,7 @@ public class ClienteController {
 //
 //    }
 
-    @GetMapping("/cliente/ver/{id}")
+    @GetMapping(value = "/ver/{id}")
 
     public String historialCliente(Model model, @PathVariable("id") String id) {
         Cliente cliente = clienteService.buscarPorId(Long.parseLong(id));
@@ -104,7 +112,7 @@ public class ClienteController {
 
     }
 
-    @RequestMapping(value = "/cliente/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String borrarCliente(@PathVariable String id) {
         Cliente cliente = clienteService.buscarPorId(Long.parseLong(id));
         clienteService.borrarClientePorId(cliente);
