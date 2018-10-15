@@ -62,7 +62,7 @@
                 <p class="copyright">&copy; 2017 <a href="https://www.themeineed.com" target="_blank">Theme I Need</a>. All Rights Reserved.</p>
             </div>
         </footer>
-    
+
     
 </body>
 <script src="/assets/vendor/jquery/jquery.min.js"></script>
