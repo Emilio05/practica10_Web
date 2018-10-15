@@ -6,6 +6,8 @@ import org.hibernate.annotations.Where;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Blob;
+import java.time.LocalDate;
+import java.util.Base64;
 import java.util.Date;
 
 
@@ -28,7 +30,7 @@ public class Cliente implements Serializable {
     private String apellido;
 
     @Column(name = "fechaNacimiento")
-    private Date fechaNacimiento;
+    private LocalDate fechaNacimiento;
 
     @Loader
     @Column(name = "imagen", columnDefinition = "BLOB")
@@ -39,7 +41,7 @@ public class Cliente implements Serializable {
     public  Cliente(){
 
     }
-    public Cliente(String cedula, String nombre, Date fechaNacimiento) {
+    public Cliente(String cedula, String nombre, LocalDate fechaNacimiento) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
@@ -77,16 +79,16 @@ public class Cliente implements Serializable {
         this.apellido = apellido;
     }
 
-    public Date getFechaNacimiento() {
+    public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public byte[] getImagen() {
-        return imagen;
+    public String getImagen() {
+        return Base64.getEncoder().encodeToString(imagen);
     }
 
     public void setImagen(byte[] imagen) {

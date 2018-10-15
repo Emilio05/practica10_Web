@@ -16,7 +16,7 @@
 
 						<div class="panel-body">
                                 <button class="btn btn-primary" data-toggle="modal" data-target="#modalEquipo">Crear Equipo</button>
-								<form>
+								<form method="POST" action="/equipos"  enctype='multipart/form-data'>
                                     <div class="modal fade" id="modalEquipo" tabindex="-1" role="dialog" aria-labelledby="modalEquipoLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
@@ -27,18 +27,19 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <input type="text" class="form-control" id="username" name="username" placeholder="Nombre de Equipo">
+                                                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre del Equipo">
+                                                    <input type="text" class="form-control" id="precio" name="precio" placeholder="Precio del Equipo">
+                                                    <input type="text" class="form-control" id="existencia" name="existencia" placeholder="Existencia del Equipo">
+                                                    <select id="categoria" name="categoria" class="form-control select2 select2-hidden-accessible">
+                                                    <#list categorias as category>
+                                                        <option value="${category}">${category.getNombreCategoria()}</option>
+                                                    </#list>
 
-                                                    <input type="password" class="form-control" id="password" name="password" placeholder="Contrasena">
-                                                    <input type="email" class="form-control" id="email" name="email" placeholder="E-Mail">
-                                                    <div class="form-group"> <!-- Date input -->
-                                                        <input data-provide="datepicker" data-date-autoclose="true" class="form-control" data-date-format="dd-mm-yyyy">
-                                                    </div>
-
+                                                    <input type="file"  accept="image/png, image/jpeg" id="foto" name="foto">
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                                    <input type="submit" value="Guardar" class="btn btn-primary" />
                                                 </div>
                                             </div>
                                         </div>
@@ -68,7 +69,7 @@
                                         <div class="btn-group">
                                             <a href="#" class="btn btn-success"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                             <a href="#" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                            <a href="#" class="btn btn-danger"><i class="fa fa-trash aria-hidden="true"></i></
+                                            <a href="/equipo/${equipo.getId()}" class="btn btn-danger"><i class="fa fa-trash aria-hidden="true"></i></
                                         </div>
                                     </td>
 

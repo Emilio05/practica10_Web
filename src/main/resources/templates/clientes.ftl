@@ -29,6 +29,7 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+                                                    <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
                                                     <input type="text" class="form-control" id="cedula" name="cedula" placeholder="Cedula">
                                                     <input type="date"  class="date" min="2018-01-01" max="2018-12-31" id="fechaNacimiento" name="fechaNacimiento">
                                                     <input type="file"  accept="image/png, image/jpeg" id="foto" name="foto">
@@ -65,7 +66,7 @@
                                         <div class="btn-group">
                                             <a href="#" class="btn btn-success"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                             <a href="#" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                            <a href="#" class="btn btn-danger"><i class="fa fa-trash aria-hidden="true"></i></
+                                            <a href="/cliente/${cliente.getId()}" class="btn btn-danger"><i class="fa fa-trash aria-hidden="true"></i></a>
                                         </div>
                                     </td>
 

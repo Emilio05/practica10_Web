@@ -22,8 +22,9 @@ public class EquipoServiceImpl implements EquipoService {
     public void actualizarEquipo(Equipo equipo){
         crearEquipo(equipo);
     }
-    public void borrarEquipoPorId(long id){
-        equipoRepository.deleteById(id);
+    public void borrarEquipoPorId(Equipo equipo){
+        equipo.setDeleted(true);
+        actualizarEquipo(equipo);
     }
     public void borrarTodosLosEquipos(){
         equipoRepository.deleteAll();
