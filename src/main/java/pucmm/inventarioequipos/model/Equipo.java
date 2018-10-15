@@ -92,6 +92,14 @@ public class Equipo implements Serializable {
         return deleted;
     }
 
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
     public void setDeleted(boolean deleted) {
         this.deleted = deleted;
     }

@@ -1,6 +1,7 @@
 package pucmm.inventarioequipos.controller;
 
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.hibernate.event.spi.SaveOrUpdateEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,9 +19,13 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 @Controller
 public class ClienteController {
@@ -41,20 +46,17 @@ public class ClienteController {
     }
 
     @PostMapping("clientes")
-    public String crearCliente(@RequestParam("foto") MultipartFile foto, @RequestParam("nombre") String nombre, @RequestParam("cedula") String cedula
-                               , @RequestParam("fechaNacimiento") Date fechaNacimiento,
+    public String crearCliente(@RequestParam("foto") MultipartFile foto, @RequestParam("nombre") String nombre, @RequestParam("apellido") String apellido, @RequestParam("cedula") String cedula,
+                               @RequestParam("fechaNacimiento") String fechaNacimiento,
                                RedirectAttributes redirectAttributes) {
-        Cliente cliente = null;
 
-        if (foto.isEmpty()) {
-            redirectAttributes.addFlashAttribute("message", "Please select a file to upload");
-            return "redirect:clientes";
-        }
+        Cliente cliente = new Cliente();
+
         try {
 
             // Get the file and save it somewhere
             byte[] bytes = foto.getBytes();
-          //  cliente.setImagen(bytes);
+            cliente.setImagen(bytes);
             Path path = Paths.get(UPLOADED_FOLDER + foto.getOriginalFilename());
             Files.write(path, bytes);
 
@@ -64,20 +66,50 @@ public class ClienteController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(nombre);
+        SimpleDateFormat format = new SimpleDateFormat("yy-mm-dd");
+        LocalDate date = LocalDate.parse(fechaNacimiento);
+        System.out.println( nombre + " " + cedula + " " + date);
 
-        clienteService.crearCliente(nombre, cedula, fechaNacimiento);
-        return "redirect:/clientes";    }
-
-
-    @RequestMapping("/cliente/{id}")
-    public Cliente obtenerCliente(@PathVariable int id){
-        return clienteService.buscarPorId(id);
+        cliente.setNombre(nombre);
+        cliente.setApellido(apellido);
+        cliente.setCedula(cedula);
+        cliente.setFechaNacimiento(date);
+        clienteService.crearCliente(cliente);
+        return "redirect:/clientes";
     }
 
-    @DeleteMapping("/cliente/{id}")
-    public void borrarCliente(@PathVariable long id) {
-        clienteService.borrarClientePorId(id);
+//
+//   @GetMapping("cliente/ver/{id}")
+//   public String historialCliente(Model model, @PathVariable String id){
+//
+//
+//        Cliente cliente = clienteService.buscarPorId(Long.parseLong(id));
+//        model.addAttribute("cliente", cliente);
+//        return "historialCliente";
+//   }
+//    @RequestMapping(value = "/cliente/ver/{id}")
+//    public String historialCliente(@PathVariable String id , Model model) {
+//        Cliente cliente = clienteService.buscarPorId(Long.parseLong(id));
+//        model.addAttribute("cliente", cliente);
+//        return "historialCliente";
+//
+//    }
+
+    @GetMapping("/cliente/ver/{id}")
+
+    public String historialCliente(Model model, @PathVariable("id") String id) {
+        Cliente cliente = clienteService.buscarPorId(Long.parseLong(id));
+        model.addAttribute("cliente", cliente);
+        return "historialCliente";
+
+    }
+
+    @RequestMapping(value = "/cliente/{id}", method = RequestMethod.GET)
+    public String borrarCliente(@PathVariable String id) {
+        Cliente cliente = clienteService.buscarPorId(Long.parseLong(id));
+        clienteService.borrarClientePorId(cliente);
+        return "redirect:/clientes";
+
     }
 
 //    @RequestMapping(value = "/cliente", method = RequestMethod.PUT)

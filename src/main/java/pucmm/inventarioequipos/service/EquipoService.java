@@ -8,7 +8,7 @@ public interface EquipoService {
 
     void crearEquipo(Equipo equipo);
     void actualizarEquipo(Equipo equipo);
-    void borrarEquipoPorId(long id);
+    void borrarEquipoPorId(Equipo equipo);
     void borrarTodosLosEquipos();
     List<Equipo> buscarTodosEquipos();
     Equipo buscarPorId(long id);

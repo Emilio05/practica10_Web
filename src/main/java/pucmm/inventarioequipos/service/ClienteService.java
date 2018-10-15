@@ -5,14 +5,13 @@ import pucmm.inventarioequipos.model.Cliente;
 import pucmm.inventarioequipos.repository.ClienteRepository;
 
 import javax.transaction.Transactional;
-import java.util.Date;
 import java.util.List;
 
 public interface ClienteService {
 
-     void crearCliente(String nombre, String cedula, Date fechaNacimiento);
+     void crearCliente(Cliente cliente);
      void actualizarCliente(Cliente cliente);
-     void borrarClientePorId(long id);
+     void borrarClientePorId(Cliente cliente);
      void borrarTodosLosClientes();
      List<Cliente> buscarTodosClientes();
      Cliente buscarPorId(long id);
