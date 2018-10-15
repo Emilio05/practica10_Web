@@ -75,10 +75,10 @@ public class EquipoController {
         return "redirect:/equipos";
     }
 
-    @RequestMapping("/equipo/{id}")
-    public Equipo obtenerEquipo(@PathVariable int id){
-        return equipoService.buscarPorId(id);
-    }
+//    @RequestMapping("/equipo/{id}")
+//    public Equipo obtenerEquipo(@PathVariable int id){
+//        return equipoService.buscarPorId(id);
+//    }
 
     @RequestMapping(value = "/equipo/{id}", method = RequestMethod.GET)
     public String borrarEquipo(@PathVariable String id) {
