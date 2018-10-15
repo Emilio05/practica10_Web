@@ -46,10 +46,10 @@ public class ClienteController {
         return "clientes";
     }
     @RequestMapping(value = "/historialclientes/{id}")
-    public String historalClientes(Model model, @PathVariable("id") long id)
+    public String historialClientes(Model model, @PathVariable String id)
     {
-       Cliente cliente = clienteService.buscarPorId(id);
-        model.addAttribute("cliente",cliente);
+       Cliente cliente = clienteService.buscarPorId(Long.parseLong(id));
+        model.addAttribute("cliente", cliente);
         return "historialclientes";
     }
 
@@ -103,14 +103,6 @@ public class ClienteController {
 //
 //    }
 
-    @GetMapping(value = "/ver/{id}")
-
-    public String historialCliente(Model model, @PathVariable("id") String id) {
-        Cliente cliente = clienteService.buscarPorId(Long.parseLong(id));
-        model.addAttribute("cliente", cliente);
-        return "historialCliente";
-
-    }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String borrarCliente(@PathVariable String id) {

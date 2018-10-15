@@ -27,5 +27,4 @@ public class UsuariosController {
         model.addAttribute("usuarios", usuarios);
         return "usuarios";
     }
-
 }
