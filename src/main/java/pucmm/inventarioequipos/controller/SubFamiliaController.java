@@ -42,7 +42,6 @@ public class SubFamiliaController {
 
         SubFamilia subFamilia= new SubFamilia();
         subFamilia.setNombreSubFamilia(nombre);
-        System.out.println(categoria);
         subFamilia.setCategoria(categoriaService.findByNombreCategoria(categoria));
         subFamiliaService.crearSubFamilia(subFamilia);
 
