@@ -24,6 +24,11 @@ public class Categoria implements Serializable {
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<Equipo> equipos = new ArrayList<>();
 
+    @OneToMany(  mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true)
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private List<SubFamilia> subFamilia = new ArrayList<>();
+
+
     private boolean deleted = false;
 
     public long getId() {
@@ -48,5 +53,21 @@ public class Categoria implements Serializable {
 
     public void setDeleted(boolean deleted) {
         this.deleted = deleted;
+    }
+
+    public List<Equipo> getEquipos() {
+        return equipos;
+    }
+
+    public void setEquipos(List<Equipo> equipos) {
+        this.equipos = equipos;
+    }
+
+    public List<SubFamilia> getSubFamilia() {
+        return subFamilia;
+    }
+
+    public void setSubFamilia(List<SubFamilia> subFamilia) {
+        this.subFamilia = subFamilia;
     }
 }

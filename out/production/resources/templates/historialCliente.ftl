@@ -1,7 +1,5 @@
-<!doctype html>
-<html lang="en">
-<#include "layout.ftl">
-<body>
+
+<#import "layout.ftl" as layout>
 <!-- MAIN -->
 <div class="main">
     <!-- MAIN CONTENT -->
@@ -32,6 +30,3 @@
 </div>
 </div>
 <!-- END WRAPPER -->
-</body>
-
-</html>

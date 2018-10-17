@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
+@RequestMapping("/equipos")
 public class EquipoController {
 
     private static String UPLOADED_FOLDER = "C://Users//EmilioFerreiras//Desktop//";
@@ -31,7 +32,7 @@ public class EquipoController {
     @Autowired
     private CategoriaServiceImpl categoriaService;
 
-    @GetMapping("/equipos")
+    @GetMapping("/")
     public String equipos(Model model)
     {
         List<Equipo> equipos = new ArrayList<>();
@@ -42,7 +43,7 @@ public class EquipoController {
         return "equipos";
     }
 
-    @PostMapping("equipos")
+    @PostMapping("/")
     public String crearEquipo(@RequestParam("foto") MultipartFile foto, @RequestParam("nombre") String nombre, @RequestParam("precio") String precio, @RequestParam("existencia") String existencia,
                               @RequestParam("categoria") String categoria,
                               RedirectAttributes redirectAttributes) {
@@ -80,11 +81,12 @@ public class EquipoController {
 //        return equipoService.buscarPorId(id);
 //    }
 
-    @RequestMapping(value = "/equipo/{id}", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String borrarEquipo(@PathVariable String id) {
         Equipo equipo = equipoService.buscarPorId(Long.parseLong(id));
         equipoService.borrarEquipoPorId(equipo);
-        return "redirect:/equipos";
+        return "redirect:/equipos/";
 
     }
 

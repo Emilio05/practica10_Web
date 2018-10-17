@@ -44,6 +44,7 @@
                         <li><a href="/roles/" class=""><i class="lnr lnr-alarm"></i> <span>Roles</span></a></li>
                         <li><a href="/familias/" class=""><i class="lnr lnr-alarm"></i> <span>Familias</span></a></li>
                         <li><a href="/alquileres/" class=""><i class="lnr lnr-alarm"></i> <span>Alquiler</span></a></li>
+
                         <#--<li>-->
                             <#--<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Pages</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>-->
                             <#--<div id="subPages" class="collapse ">-->

@@ -17,7 +17,7 @@
 
 
                                 <button class="btn btn-primary" data-toggle="modal" data-target="#modalClientes">Crear Cliente</button>
-								<form method="POST" action="/clientes"  enctype='multipart/form-data'>
+								<form method="POST" action="/clientes/"  enctype='multipart/form-data'>
                                     <div class="modal fade" id="modalClientes" tabindex="-1" role="dialog" aria-labelledby="modalClientesLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
@@ -64,9 +64,9 @@
 
                                     <td class="text-center">
                                         <div class="btn-group">
-                                            <a href="#" class="btn btn-success"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            <a href="/clientes/historial/${cliente.getId()}" class="btn btn-success"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                             <a href="#" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                            <a href="/cliente/${cliente.getId()}" class="btn btn-danger"><i class="fa fa-trash aria-hidden="true"></i></a>
+                                            <a href="/clientes/${cliente.getId()}" class="btn btn-danger"><i class="fa fa-trash aria-hidden="true"></i></a>
                                         </div>
                                     </td>
 

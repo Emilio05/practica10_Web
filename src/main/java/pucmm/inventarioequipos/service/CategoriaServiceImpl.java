@@ -21,9 +21,9 @@ public class CategoriaServiceImpl implements CategoriaService {
     public void actualizarCategoria(Categoria categoria){
         crearCategoria(categoria);
     }
-    public void borrarCategoriaPorId(long id){
-        categoriaRepository.deleteById(id);
-    }
+    public void borrarCategoriaPorId(Categoria categoria){
+        categoria.setDeleted(true);
+        actualizarCategoria(categoria);    }
     public void borrarTodasLasCategorias(){
         categoriaRepository.deleteAll();
     }

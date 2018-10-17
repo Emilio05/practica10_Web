@@ -38,10 +38,10 @@
                 <nav>
                     <ul class="nav">
                         <li><a href="/" class="active"><i class="lnr lnr-home"></i> <span>Inicio</span></a></li>
-                        <li><a href="usuarios" class=""><i class="lnr lnr-code"></i> <span>Usuarios</span></a></li>
-                        <li><a href="clientes" class=""><i class="lnr lnr-chart-bars"></i> <span>Clientes</span></a></li>
-                        <li><a href="equipos" class=""><i class="lnr lnr-cog"></i> <span>Equipos</span></a></li>
-                        <li><a href="alquiler" class=""><i class="lnr lnr-alarm"></i> <span>Alquiler</span></a></li>
+                        <li><a href="usuarios/" class=""><i class="lnr lnr-code"></i> <span>Usuarios</span></a></li>
+                        <li><a href="clientes/" class=""><i class="lnr lnr-chart-bars"></i> <span>Clientes</span></a></li>
+                        <li><a href="equipos/" class=""><i class="lnr lnr-cog"></i> <span>Equipos</span></a></li>
+                        <li><a href="alquiler/" class=""><i class="lnr lnr-alarm"></i> <span>Alquiler</span></a></li>
                         <#--<li>-->
                             <#--<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Pages</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>-->
                             <#--<div id="subPages" class="collapse ">-->
@@ -62,7 +62,7 @@
                 <p class="copyright">&copy; 2017 <a href="https://www.themeineed.com" target="_blank">Theme I Need</a>. All Rights Reserved.</p>
             </div>
         </footer>
-    
+
     
 </body>
 <script src="/assets/vendor/jquery/jquery.min.js"></script>

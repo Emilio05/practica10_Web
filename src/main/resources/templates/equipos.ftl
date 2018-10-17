@@ -32,7 +32,7 @@
                                                     <input type="text" class="form-control" id="existencia" name="existencia" placeholder="Existencia del Equipo">
                                                     <select id="categoria" name="categoria" class="form-control select2 select2-hidden-accessible">
                                                     <#list categorias as category>
-                                                        <option value="${category}">${category.getNombreCategoria()}</option>
+                                                        <option value="${category.getNombreCategoria()}">${category.getNombreCategoria()}</option>
                                                     </#list>
 
                                                     <input type="file"  accept="image/png, image/jpeg" id="foto" name="foto">
@@ -51,6 +51,7 @@
                                 <table id="clientstable" class="table table-striped table-bordered table-condensed table-hover table-sm">
                                     <thead>
                                     <th class="text-center">Codigo</th>
+                                    <th class="text-center">Categoria</th>
                                     <th class="text-center">Nombre de Equipo</th>
                                     <th class="text-center">Precio</th>
                                     <th class="text-center">Existencia</th>
@@ -61,6 +62,8 @@
                                 <tr>
 
                                     <td class="text-center">${equipo.getId()}</td>
+                                    <td class="text-center">${equipo.getCategoria().getNombreCategoria()}</td>
+
                                     <td class="text-center">${equipo.getNombreEquipo()}</td>
                                     <td class="text-center">${equipo.getPrecio()}</td>
                                     <td class="text-center">${equipo.getExistencia()}</td>
@@ -69,7 +72,7 @@
                                         <div class="btn-group">
                                             <a href="#" class="btn btn-success"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                             <a href="#" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                            <a href="/equipo/${equipo.getId()}" class="btn btn-danger"><i class="fa fa-trash aria-hidden="true"></i></
+                                            <a href="/equipos/${equipo.getId()}" class="btn btn-danger"><i class="fa fa-trash aria-hidden="true"></i></
                                         </div>
                                     </td>
 
