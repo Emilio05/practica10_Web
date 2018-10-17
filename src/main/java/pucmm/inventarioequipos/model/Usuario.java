@@ -28,8 +28,13 @@ public class Usuario implements Serializable {
     @JoinColumn(name = "rol_id", nullable = true, updatable = false)
     private Rol rol;
 
+    public Rol getRol() {
+        return rol;
+    }
 
-
+    public void setRol(Rol rol) {
+        this.rol = rol;
+    }
 
     private boolean deleted = false;
 

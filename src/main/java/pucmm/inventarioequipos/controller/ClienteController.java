@@ -83,32 +83,15 @@ public class ClienteController {
         cliente.setCedula(cedula);
         cliente.setFechaNacimiento(date);
         clienteService.crearCliente(cliente);
-        return "redirect:/clientes";
+        return "redirect:/clientes/";
     }
-
-//
-//   @GetMapping("cliente/ver/{id}")
-//   public String historialCliente(Model model, @PathVariable String id){
-//
-//
-//        Cliente cliente = clienteService.buscarPorId(Long.parseLong(id));
-//        model.addAttribute("cliente", cliente);
-//        return "historialCliente";
-//   }
-//    @RequestMapping(value = "/cliente/ver/{id}")
-//    public String historialCliente(@PathVariable String id , Model model) {
-//        Cliente cliente = clienteService.buscarPorId(Long.parseLong(id));
-//        model.addAttribute("cliente", cliente);
-//        return "historialCliente";
-//
-//    }
 
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String borrarCliente(@PathVariable String id) {
         Cliente cliente = clienteService.buscarPorId(Long.parseLong(id));
         clienteService.borrarClientePorId(cliente);
-        return "redirect:/clientes";
+        return "redirect:/clientes/";
 
     }
 
