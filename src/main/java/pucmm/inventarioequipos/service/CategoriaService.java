@@ -8,7 +8,7 @@ public interface CategoriaService {
 
     void crearCategoria(Categoria categoria);
     void actualizarCategoria(Categoria categoria);
-    void borrarCategoriaPorId(long id);
+    void borrarCategoriaPorId(Categoria categoria);
     void borrarTodasLasCategorias();
     List<Categoria> buscarTodasCategorias();
     Categoria buscarPorId(long id);

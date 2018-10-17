@@ -69,7 +69,7 @@
                                         <div class="btn-group">
                                             <a href="#" class="btn btn-success"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                             <a href="#" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                            <a href="/equipo/${equipo.getId()}" class="btn btn-danger"><i class="fa fa-trash aria-hidden="true"></i></
+                                            <a href="/equipos/${equipo.getId()}" class="btn btn-danger"><i class="fa fa-trash aria-hidden="true"></i></
                                         </div>
                                     </td>
 

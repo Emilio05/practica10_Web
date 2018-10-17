@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import pucmm.inventarioequipos.model.Cliente;
+import pucmm.inventarioequipos.model.Historial;
+import pucmm.inventarioequipos.service.ClienteEquipoServiceImpl;
 import pucmm.inventarioequipos.service.ClienteService;
 import pucmm.inventarioequipos.service.ClienteServiceImpl;
 
@@ -20,13 +22,12 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.sql.Array;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 @Controller
 @RequestMapping("/clientes")
@@ -37,6 +38,8 @@ public class ClienteController {
 
     @Autowired
     private ClienteServiceImpl clienteService;
+    @Autowired
+    private ClienteEquipoServiceImpl clienteEquipoService;
 
     @RequestMapping(value = "/")
     public String clientes(Model model)
@@ -50,7 +53,14 @@ public class ClienteController {
     public String historial(Model model, @PathVariable String id)
     {
        Cliente cliente = clienteService.buscarPorId(Long.parseLong(id));
+       List<Object[]> historial = clienteEquipoService.historialCliente(Long.parseLong(id));
+       historial.forEach(objects -> {
+           objects[2] = objects[2].toString().split(" ")[0];
+           objects[3] = objects[3].toString().split(" ")[0];
+       });
+
         model.addAttribute("cliente", cliente);
+        model.addAttribute("historial", historial);
         return "historial";
     }
 
@@ -84,7 +94,7 @@ public class ClienteController {
         cliente.setCedula(cedula);
         cliente.setFechaNacimiento(date);
         clienteService.crearCliente(cliente);
-        return "redirect:/clientes";
+        return "redirect:/clientes/";
     }
 
 

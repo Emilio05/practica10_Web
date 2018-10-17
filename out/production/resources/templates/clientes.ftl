@@ -17,7 +17,7 @@
 
 
                                 <button class="btn btn-primary" data-toggle="modal" data-target="#modalClientes">Crear Cliente</button>
-								<form method="POST" action="/clientes"  enctype='multipart/form-data'>
+								<form method="POST" action="/clientes/"  enctype='multipart/form-data'>
                                     <div class="modal fade" id="modalClientes" tabindex="-1" role="dialog" aria-labelledby="modalClientesLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
