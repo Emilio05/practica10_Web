@@ -7,6 +7,7 @@ import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Base64;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -80,8 +81,9 @@ public class Equipo implements Serializable {
         this.existencia = existencia;
     }
 
-    public byte[] getImagen() {
-        return imagen;
+    public String getImagen() {
+        return Base64.getEncoder().encodeToString(imagen);
+
     }
 
     public void setImagen(byte[] imagen) {

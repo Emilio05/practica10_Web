@@ -105,6 +105,35 @@ public class ClienteController {
 
     }
 
+    @PostMapping("/modificar/")
+    public String modificarCliente(@RequestParam("nombre2") String nombre, @RequestParam("id2") String id,@RequestParam("apellido2") String apellido,
+                               @RequestParam("cedula2") String cedula, @RequestParam("fechaNacimiento2") String fechaNacimiento,
+                               @RequestParam("foto2") MultipartFile foto,  RedirectAttributes redirectAttributes){
+
+        Cliente cliente = clienteService.buscarPorId(Long.parseLong(id));
+        cliente.setNombre(nombre);
+        cliente.setApellido(apellido);
+        SimpleDateFormat format = new SimpleDateFormat("yy-mm-dd");
+        LocalDate date = LocalDate.parse(fechaNacimiento);
+        cliente.setFechaNacimiento(date);
+        try {
+
+            // Get the file and save it somewhere
+            byte[] bytes = foto.getBytes();
+            cliente.setImagen(bytes);
+            Path path = Paths.get(UPLOADED_FOLDER + foto.getOriginalFilename());
+            Files.write(path, bytes);
+
+            redirectAttributes.addFlashAttribute("message",
+                    "You successfully uploaded '" + foto.getOriginalFilename() + "'");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        clienteService.actualizarCliente(cliente);
+        return "redirect:/clientes/";
+    }
+
 //    @RequestMapping(value = "/cliente", method = RequestMethod.PUT)
 //    public String agregarCliente(@RequestParam int id, @RequestParam String nombre){
 //        Estudiante estudiante = new Estudiante(matricula);

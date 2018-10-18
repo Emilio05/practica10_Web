@@ -33,7 +33,7 @@ public class CategoriasController {
 
 
     @PostMapping("/")
-    public String crearFamilia(@RequestParam("categoria") String categoria){
+    public String crearFamilia(@RequestParam("nombre") String categoria){
     Categoria f = new Categoria();
     f.setNombreCategoria(categoria);
     categoriasService.crearCategoria(f);
@@ -43,7 +43,7 @@ public class CategoriasController {
 
     @PostMapping(value = "/eliminar/{id}")
     public String borrarFamilia(@PathVariable String id) {
-        categoriasService.borrarCategoriaPorId(Long.parseLong(id));
+       // categoriasService.borrarCategoriaPorId(Long.parseLong(id));
         return "redirect:/familias/";
 
     }

@@ -16,7 +16,7 @@ public class ClienteEquipoServiceImpl implements ClienteEquipoService {
     private ClienteEquipoRepository clienteEquipoRepository;
 
     public void crearClienteEquipo(ClienteEquipo clienteEquipo){
-
+        clienteEquipoRepository.save(clienteEquipo);
     }
     public void actualizarClienteEquipo(ClienteEquipo clienteEquipo){
         crearClienteEquipo(clienteEquipo);

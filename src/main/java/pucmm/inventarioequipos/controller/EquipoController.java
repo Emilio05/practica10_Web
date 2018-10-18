@@ -49,6 +49,7 @@ public class EquipoController {
                               RedirectAttributes redirectAttributes) {
 
 
+
         Equipo equipo = new Equipo();
 
         try {
@@ -73,13 +74,45 @@ public class EquipoController {
         Categoria categoria1 = categoriaService.findByNombreCategoria(categoria);
         equipo.setCategoria(categoria1);
         equipoService.crearEquipo(equipo);
-        return "redirect:/equipos";
+        return "redirect:/equipos/";
     }
 
-//    @RequestMapping("/equipo/{id}")
-//    public Equipo obtenerEquipo(@PathVariable int id){
-//        return equipoService.buscarPorId(id);
-//    }
+    @RequestMapping(value = "/ver/{id}", method = RequestMethod.GET)
+    public String ver(Model model, @PathVariable String id)
+    {
+        Equipo equipo = equipoService.buscarPorId(Long.parseLong(id));
+
+        model.addAttribute("equipo", equipo);
+        return "verequipo";
+    }
+
+    @PostMapping("/modificar/")
+    public String modificarEquipo(@RequestParam("nombre2") String nombre, @RequestParam("id2") String id,@RequestParam("precio2") String precio,
+                               @RequestParam("existencia2") String existencia, @RequestParam("categoria2") String categoria,
+                               @RequestParam("foto2") MultipartFile foto,  RedirectAttributes redirectAttributes){
+
+        Equipo equipo = equipoService.buscarPorId(Long.parseLong(id));
+        equipo.setNombreEquipo(nombre);
+        equipo.setPrecio(Float.parseFloat(precio));
+        equipo.setExistencia(Integer.parseInt(existencia));
+        equipo.setCategoria(categoriaService.findByNombreCategoria(categoria));
+        try {
+
+            // Get the file and save it somewhere
+            byte[] bytes = foto.getBytes();
+            equipo.setImagen(bytes);
+            Path path = Paths.get(UPLOADED_FOLDER + foto.getOriginalFilename());
+            Files.write(path, bytes);
+
+            redirectAttributes.addFlashAttribute("message",
+                    "You successfully uploaded '" + foto.getOriginalFilename() + "'");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        equipoService.actualizarEquipo(equipo);
+        return "redirect:/equipos/";
+    }
 
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)

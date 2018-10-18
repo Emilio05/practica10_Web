@@ -15,8 +15,9 @@
                         </div>
 
 						<div class="panel-body">
-                            <label>ID: </label>${rol.getId()}
-                            <label>Nombre de Rol: </label>${rol.getNombreRol()}
+                            <label>ID: </label> ${rol.getId()}
+							<br>
+                            <label>Nombre de Rol: </label> ${rol.getNombreRol()}
                             </div>
 							<!-- END REALTIME CHART -->
 						</div>

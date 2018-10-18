@@ -16,7 +16,7 @@
 
 						<div class="panel-body">
                                 <button class="btn btn-primary" data-toggle="modal" data-target="#modalEquipo">Crear Equipo</button>
-								<form method="POST" action="/equipos"  enctype='multipart/form-data'>
+								<form method="POST" action="/equipos/"  enctype='multipart/form-data'>
                                     <div class="modal fade" id="modalEquipo" tabindex="-1" role="dialog" aria-labelledby="modalEquipoLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
@@ -70,9 +70,11 @@
 
                                     <td class="text-center">
                                         <div class="btn-group">
-                                            <a href="#" class="btn btn-success"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                            <a href="#" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                            <a href="/equipos/${equipo.getId()}" class="btn btn-danger"><i class="fa fa-trash aria-hidden="true"></i></
+                                            <a href="/equipos/ver/${equipo.getId()}" class="btn btn-success"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            <button type="button" onclick="modificar(${equipo.getId()}, '${equipo.getNombreEquipo()}', '${equipo.getPrecio()}', '${equipo.getExistencia()}',
+                                                    '${equipo.getCategoria().getNombreCategoria()}')" data-toggle="modal" data-target="#modalEquipo2" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                            <a href="/equipos/${equipo.getId()}" class="btn btn-danger"><i class="fa fa-trash aria-hidden="true"></i></a>
+
                                         </div>
                                     </td>
 
@@ -81,6 +83,36 @@
                                 </#list>
                                 </table>
                             </div>
+                            <form method="POST" action="/equipos/modificar/"  enctype='multipart/form-data'>
+                                <div class="modal fade" id="modalEquipo2" tabindex="-1" role="dialog" aria-labelledby="modalEquipo2Label" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modalEquipo2Label">Crear Equipo</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <input type="hidden" name="id2" id="id2">
+                                                <input type="text" class="form-control" id="nombre2" name="nombre2" placeholder="Nombre del Equipo">
+                                                <input type="text" class="form-control" id="precio2" name="precio2" placeholder="Precio del Equipo">
+                                                <input type="text" class="form-control" id="existencia2" name="existencia2" placeholder="Existencia del Equipo">
+                                                <select id="categoria2" name="categoria2" class="form-control select2 select2-hidden-accessible">
+                                                    <#list categorias as category>
+                                                        <option value="${category.getNombreCategoria()}">${category.getNombreCategoria()}</option>
+                                                    </#list>
+                                                </select>
+                                                <input type="file"  accept="image/png, image/jpeg" id="foto2" name="foto2">
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                                <input type="submit" value="Guardar" class="btn btn-primary" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
 						</div>
 
 					</div>
@@ -95,5 +127,15 @@
 </body>
 <script>
     $('.datepicker').datepicker({format: "dd-mm-yyyy"});
+
+    function modificar(id, nombre, precio, existencia, categoria, foto){
+        $('#id2').val(id);
+        $('#nombre2').val(nombre);
+        $('#precio2').val(precio);
+        $('#existencia2').val(existencia);
+        $('#categoria2').val(categoria);
+        $('#foto2').val(foto);
+    }
+
 </script>
 </html>
