@@ -1,21 +1,22 @@
 package pucmm.inventarioequipos.model;
 
+import org.hibernate.annotations.Where;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
 @Table(name = "alquiler")
+@Where(clause = "deleted = 0")
 public class ClienteEquipo implements Serializable {
 
-    private long id;
-    private Cliente cliente;
-    private Equipo equipo;
 
     @Column(name = "fechaInicioAlquiler")
-    private Date fechaInicioAlquiler;
+    private LocalDate fechaInicioAlquiler;
     @Column(name = "fechaFinAlquiler")
-    private Date fechaFinAlquiler;
+    private LocalDate fechaFinAlquiler;
     @Column(name = "cantidad")
     private int cantidad;
     @Column(name = "costo")
@@ -57,19 +58,19 @@ public class ClienteEquipo implements Serializable {
         this.total = total;
     }
 
-    public Date getFechaInicioAlquiler() {
+    public LocalDate getFechaInicioAlquiler() {
         return fechaInicioAlquiler;
     }
 
-    public void setFechaInicioAlquiler(Date fechaInicioAlquiler) {
+    public void setFechaInicioAlquiler(LocalDate fechaInicioAlquiler) {
         this.fechaInicioAlquiler = fechaInicioAlquiler;
     }
 
-    public Date getFechaFinAlquiler() {
+    public LocalDate getFechaFinAlquiler() {
         return fechaFinAlquiler;
     }
 
-    public void setFechaFinAlquiler(Date fechaFinAlquiler) {
+    public void setFechaFinAlquiler(LocalDate fechaFinAlquiler) {
         this.fechaFinAlquiler = fechaFinAlquiler;
     }
 
@@ -87,6 +88,10 @@ public class ClienteEquipo implements Serializable {
     @Id
     @GeneratedValue
     @Column(name = "alquiler_id")
+    private long id;
+
+    private boolean deleted = false;
+
     public long getId()
     {
         return id;
@@ -96,8 +101,18 @@ public class ClienteEquipo implements Serializable {
         this.id  = id;
     }
 
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
+    }
+
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "cliente_id")
+    private Cliente cliente;
+
     public Cliente getCliente() {
         return cliente;
     }
@@ -107,6 +122,8 @@ public class ClienteEquipo implements Serializable {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "equipo_id")
+    private Equipo equipo;
+
     public Equipo getEquipo() {
         return equipo;
     }

@@ -9,6 +9,8 @@ import java.sql.Blob;
 import java.time.LocalDate;
 import java.util.Base64;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Entity
@@ -37,6 +39,19 @@ public class Cliente implements Serializable {
     private byte[] imagen;
 
     private boolean deleted = false;
+
+    @OneToMany(mappedBy = "cliente")
+    private Set<ClienteEquipo> clienteEquipos = new HashSet<ClienteEquipo>();
+
+
+    public Set<ClienteEquipo> getClienteEquipos() {
+        return clienteEquipos;
+    }
+
+    public void setClienteEquipos(Set<ClienteEquipo> clienteEquipos) {
+        this.clienteEquipos = clienteEquipos;
+    }
+
 
     public  Cliente(){
 

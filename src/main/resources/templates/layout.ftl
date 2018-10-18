@@ -41,7 +41,7 @@
                         <li><a href="/clientes/" class=""><i class="lnr lnr-chart-bars"></i> <span>Clientes</span></a></li>
                         <li><a href="/equipos/" class=""><i class="lnr lnr-cog"></i> <span>Equipos</span></a></li>
                         <li><a href="/roles/" class=""><i class="lnr lnr-alarm"></i> <span>Roles</span></a></li>
-                        <li><a href="/familias/" class=""><i class="lnr lnr-alarm"></i> <span>Familias</span></a></li>
+                        <li><a href="/categorias/" class=""><i class="lnr lnr-alarm"></i> <span>Familias</span></a></li>
                         <li><a href="/alquileres/" class=""><i class="lnr lnr-alarm"></i> <span>Alquiler</span></a></li>
 
                         <#--<li>-->
@@ -78,3 +78,12 @@
 <script src="/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js">   </script>
 
 </html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="/assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+<script src="/assets/vendor/chartist/js/chartist.min.js"></script>
+<script src="/assets/scripts/klorofil-common.js"></script>
+<script src="/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>

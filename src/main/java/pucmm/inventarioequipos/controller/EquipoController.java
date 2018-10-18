@@ -9,6 +9,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import pucmm.inventarioequipos.model.Categoria;
 import pucmm.inventarioequipos.model.Equipo;
 import pucmm.inventarioequipos.service.CategoriaServiceImpl;
+import pucmm.inventarioequipos.service.ClienteEquipoServiceImpl;
 import pucmm.inventarioequipos.service.EquipoServiceImpl;
 
 import java.io.IOException;
@@ -31,6 +32,9 @@ public class EquipoController {
     private EquipoServiceImpl equipoService;
     @Autowired
     private CategoriaServiceImpl categoriaService;
+
+    @Autowired
+    private ClienteEquipoServiceImpl clienteEquipoService;
 
     @GetMapping("/")
     public String equipos(Model model)
@@ -120,6 +124,16 @@ public class EquipoController {
         Equipo equipo = equipoService.buscarPorId(Long.parseLong(id));
         equipoService.borrarEquipoPorId(equipo);
         return "redirect:/equipos/";
+
+    }
+
+
+    @RequestMapping(value = "/nodevueltos/", method = RequestMethod.GET)
+    public String listadonodevueltos(Model model) {
+
+        List<Object[]> nodevueltos = clienteEquipoService.equiposAlquiladosNoDevueltos();
+        model.addAttribute("objetos",nodevueltos);
+        return "nodevueltos";
 
     }
 

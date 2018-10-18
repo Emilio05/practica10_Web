@@ -9,7 +9,7 @@ public interface ClienteEquipoService {
 
     void crearClienteEquipo(ClienteEquipo clienteEquipo);
     void actualizarClienteEquipo(ClienteEquipo clienteEquipo);
-    void borrarClienteEquipoPorId(long id);
+    void borrarClienteEquipoPorId(ClienteEquipo clienteEquipo);
     void borrarTodosLosClientesEquipos();
     List<ClienteEquipo> buscarTodosClientesEquipos();
     ClienteEquipo buscarPorId(long id);

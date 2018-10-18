@@ -38,15 +38,15 @@ public class Equipo implements Serializable {
     private boolean deleted = false;
 
     @OneToMany(mappedBy = "equipo")
-    private Set<FacturaEquipo> facturaEquipos = new HashSet<FacturaEquipo>();
+    private Set<ClienteEquipo> clienteEquipos = new HashSet<ClienteEquipo>();
 
 
-    public Set<FacturaEquipo> getFacturaEquipos() {
-        return facturaEquipos;
+    public Set<ClienteEquipo> getClienteEquipos() {
+        return clienteEquipos;
     }
 
-    public void setFacturaEquipos(Set<FacturaEquipo> equipos) {
-        this.facturaEquipos = equipos;
+    public void setClienteEquipos(Set<ClienteEquipo> clienteEquipos) {
+        this.clienteEquipos = clienteEquipos;
     }
 
     public long getId() {

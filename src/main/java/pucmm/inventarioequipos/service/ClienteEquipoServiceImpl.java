@@ -21,8 +21,9 @@ public class ClienteEquipoServiceImpl implements ClienteEquipoService {
     public void actualizarClienteEquipo(ClienteEquipo clienteEquipo){
         crearClienteEquipo(clienteEquipo);
     }
-    public void borrarClienteEquipoPorId(long id){
-        clienteEquipoRepository.deleteById(id);
+    public void borrarClienteEquipoPorId(ClienteEquipo clienteEquipo){
+        clienteEquipo.setDeleted(true);
+        actualizarClienteEquipo(clienteEquipo);
     }
     public void borrarTodosLosClientesEquipos(){
         clienteEquipoRepository.deleteAll();
