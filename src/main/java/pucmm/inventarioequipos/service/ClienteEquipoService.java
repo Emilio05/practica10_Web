@@ -16,7 +16,7 @@ public interface ClienteEquipoService {
     boolean clienteEquipoExiste(ClienteEquipo clienteEquipo);
     List<Object[]> equiposAlquiladosNoDevueltos();
     List<Object[]> historialCliente(long id);
-    List<Object[]> promedioAlquilerPorFamilia();
+    List<Object[]> promedioAlquilerPorFamilia(long id);
 
 
 }
