@@ -34,7 +34,7 @@
                                                     <#list categorias as category>
                                                         <option value="${category.getNombreCategoria()}">${category.getNombreCategoria()}</option>
                                                     </#list>
-
+                                                    </select>
                                                     <input type="file"  accept="image/png, image/jpeg" id="foto" name="foto">
                                                 </div>
                                                 <div class="modal-footer">

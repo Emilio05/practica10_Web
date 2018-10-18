@@ -56,6 +56,7 @@
 								<div class="col-md-9">
 									<div id="headline-chart" class="ct-chart"></div>
 								</div>
+
 								<div class="col-md-3">
 									<div class="weekly-summary text-right">
 										<span class="number">2,315</span> <span class="percentage"><i class="fa fa-caret-up text-success"></i> 12%</span>
@@ -146,10 +147,26 @@
 						</div>
 						<div class="col-md-6">
 							<!-- MULTI CHARTS -->
-							<div class="panel">
-                                <canvas id="myChart"></canvas>
+                            <div class="panel">
+                                <div class="panel-heading">
 
-							</div>
+                                    <select id="categoria" name="categoria" class="form-control select2 select2-hidden-accessible">
+                                        <#list categorias as category>
+                                            <option value="${category.getNombreCategoria()}">${category.getNombreCategoria()}</option>
+                                        </#list>
+                                    </select>
+                                </div>
+                                <div class="panel-body no-padding">
+                                    <canvas id="myChart" width="400" height="400"></canvas>
+                                </div>
+
+                                <div class="panel-footer">
+                                    <div class="row">
+                                        <div class="col-md-6"><span class="panel-note"><i class="fa fa-clock-o"></i> Last 24 hours</span></div>
+                                        <div class="col-md-6 text-right"><a href="#" class="btn btn-primary">View All Purchases</a></div>
+                                    </div>
+                                </div>
+                            </div>
 							<!-- END MULTI CHARTS -->
 						</div>
 					</div>
@@ -165,48 +182,7 @@
 									</div>
 								</div>
 								<div class="panel-body">
-									<ul class="list-unstyled todo-list">
-										<li>
-											<label class="control-inline fancy-checkbox">
-												<input type="checkbox"><span></span>
-											</label>
-											<p>
-												<span class="title">Restart Server</span>
-												<span class="short-description">Dynamically integrate client-centric technologies without cooperative resources.</span>
-												<span class="date">Oct 9, 2016</span>
-											</p>
-											<div class="controls">
-												<a href="#"><i class="icon-software icon-software-pencil"></i></a> <a href="#"><i class="icon-arrows icon-arrows-circle-remove"></i></a>
-											</div>
-										</li>
-										<li>
-											<label class="control-inline fancy-checkbox">
-												<input type="checkbox"><span></span>
-											</label>
-											<p>
-												<span class="title">Retest Upload Scenario</span>
-												<span class="short-description">Compellingly implement clicks-and-mortar relationships without highly efficient metrics.</span>
-												<span class="date">Oct 23, 2016</span>
-											</p>
-											<div class="controls">
-												<a href="#"><i class="icon-software icon-software-pencil"></i></a> <a href="#"><i class="icon-arrows icon-arrows-circle-remove"></i></a>
-											</div>
-										</li>
-										<li>
-											<label class="control-inline fancy-checkbox">
-												<input type="checkbox"><span></span>
-											</label>
-											<p>
-												<strong>Functional Spec Meeting</strong>
-												<span class="short-description">Monotonectally formulate client-focused core competencies after parallel web-readiness.</span>
-												<span class="date">Oct 11, 2016</span>
-											</p>
-											<div class="controls">
-												<a href="#"><i class="icon-software icon-software-pencil"></i></a> <a href="#"><i class="icon-arrows icon-arrows-circle-remove"></i></a>
-											</div>
-										</li>
-									</ul>
-								</div>
+                                </div>
 							</div>
 							<!-- END TODO LIST -->
 						</div>
@@ -357,14 +333,7 @@
 		</div>
 	<!-- END WRAPPER -->
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-<script src="/assets/vendor/jquery/jquery.min.js"></script>
-<script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<script src="/assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
-<script src="/assets/vendor/chartist/js/chartist.min.js"></script>
-<script src="/assets/scripts/klorofil-common.js"></script>
-<script src="/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"
+
 <script>
 
     $(function() {
@@ -484,42 +453,86 @@
 
     });
 
-    var ctx = document.getElementById("myChart");
-    var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ["Dell", "HP"], ,
-            datasets: [{
-                label: '# of Votes',
-                data: [0, 1, 2, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
+
+
+    $(document).ready(function() {
+
+        var subFamilias = [];
+        var promedios = [];
+
+
+        $("#categoria").change(function () {
+            subFamilias = [];
+            promedios = [];
+
+            var categoria = $(this).val();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: '/graficar',
+                type: 'post',
+                data: {categoria: categoria},
+                dataType: 'json',
+                success: function (response) {
+
+                    // subFamilias = [];
+                    // promedios = [];
+
+                    var ctx = document.getElementById("myChart").innerHTML = "";
+
+                    console.log(response);
+                    for (var i = 0; i < response.length; i++){
+                        subFamilias.push(response[i][0]);
+                        promedios.push(response[i][1]);
                     }
-                }]
-            }
-        }
+                    console.log(subFamilias);
+                    console.log(promedios);
+
+                    var ctx = document.getElementById("myChart");
+                    var myChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: subFamilias,
+                            datasets: [{
+                                label: '# of Votes',
+                                data: promedios,
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(255, 206, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)',
+                                    'rgba(153, 102, 255, 0.2)',
+                                    'rgba(255, 159, 64, 0.2)'
+                                ],
+                                borderColor: [
+                                    'rgba(255,99,132,1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)'
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        beginAtZero:true
+                                    }
+                                }]
+                            }
+                        }
+                    });
+
+                }
+
+            });
+        });
     });
 </script>
 

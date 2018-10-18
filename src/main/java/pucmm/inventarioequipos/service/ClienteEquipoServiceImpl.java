@@ -46,8 +46,8 @@ public class ClienteEquipoServiceImpl implements ClienteEquipoService {
     public List<Object[]> historialCliente(long id){
         return clienteEquipoRepository.historialCliente(id);
     }
-    public List<Object[]> promedioAlquilerPorFamilia(){
-        return clienteEquipoRepository.promedioAlquilerPorFamilia();
+    public List<Object[]> promedioAlquilerPorFamilia(long id){
+        return clienteEquipoRepository.promediosAlquiler(id);
     }
 
 
