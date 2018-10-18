@@ -10,14 +10,24 @@
 					<!-- OVERVIEW -->
 					<div class="panel panel-headline">
 						<div class="panel-heading">
-							<h3 class="panel-title">Ver Rol</h3>
+							<h3 class="panel-title">Factura a pagar el ${alquiler.getFechaFinAlquiler()}</h3>
                             <hr>
                         </div>
 
 						<div class="panel-body">
-                            <label>ID: </label>${rol.getId()}
-                            <label>Nombre de Rol: </label>${rol.getNombreRol()}
-                            </div>
+                            <label>ID: </label>${alquiler.getId()}
+							<br>
+                            <label>Cliente: </label>${alquiler.getCliente().getNombre()} ${alquiler.getCliente().getApellido()}
+                            <br>
+                            <label>Equipo:</label>${alquiler.getEquipo().getNombreEquipo()}
+                            <br>
+                            <label>Total a Pagar: </label>${alquiler.getCosto()}
+                            <br>
+                            <form action="/alquileres/entrega/${alquiler.getId()}" method="POST">
+                                <button type="submit" class="btn btn-success"><i class="fa fa-check" aria-hidden="true"></i></button>
+                            </form>
+
+						</div>
 							<!-- END REALTIME CHART -->
 						</div>
 					</div>

@@ -15,44 +15,35 @@
                         </div>
 
 						<div class="panel-body">
-							<div class="row">
 
-                                <button class="btn btn-primary" data-toggle="modal" data-target="#modalUsuario">Crear Usuario</button>
-								<form>
-                                    <div class="modal fade" id="modalUsuario" tabindex="-1" role="dialog" aria-labelledby="modalUsuarioLabel" aria-hidden="true">
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#modalAlquiler">Crear Despacho</button>
+								<form action="/alquileres/despacho/" method="post">
+                                    <div class="modal fade" id="modalAlquiler" tabindex="-1" role="dialog" aria-labelledby="modalAlquilerLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="modalUsuarioLabel">Crear Usuario</h5>
+                                                    <h5 class="modal-title" id="modalAlquilerLabel">Despachar Equipos</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
 
-
-                                                    <br />
-                                                    <div class="box-header with-border">
-                                                        <h3 id="numerofactura" name="numerofactura" class="box-title">Factura</h3>
-                                                    </div>
-                                                    <br>
-
-
                                                     <div class="row">
-                                                        <div class="col-md-3">
+                                                        <div class="col-md-4">
                                                             <div class="form-group">
                                                                 <label>Cliente</label>
-                                                                <select id="client" name="client" class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" required >
-                                                                    <option selected="selected">Seleccionar cliente</option>
+                                                                <select id="client" name="client" class="form-control" style="width: 100%;" tabindex="-1" aria-hidden="true" required >
+                                                                    <option selected="selected">Seleccionar Cliente</option>
                                                                     <#list clientes as cliente>
-                                                                    <option value="${cliente}">${cliente.getNombre()}</option>
+                                                                    <option value="${cliente.getId()}">${cliente.getNombre()}</option>
                                                                     </#list>
                                                                 </select>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-5">
+                                                        <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <i class="fa fa-calendar"> </i> <label>Fecha</label>
+                                                                <label>Fecha</label>
                                                                 <div class='input-group'>
                                                                     <div class='input-group date'>
                                                                         <input id="datepicker" name="fecha" class="form-control pull-right" type="date">
@@ -60,97 +51,76 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-3">
+                                                        <div class="col-md-4">
 
                                                             <div class="form-group">
                                                                 <label>Fecha de promesa</label>
-
-                                                                <input id="direccion" name="direccion" class="form-control" type="text" placeholder="Dirección" required/>
-                                                            </div>
+                                                                <div class='input-group'>
+                                                                    <div class='input-group date'>
+                                                                        <input id="datepicker" name="fechaentrega" class="form-control pull-right" type="date">
+                                                                    </div>
+                                                                </div>
+                                                                  </div>
                                                         </div>
                                                     </div>
 
                                                     <div class="row">
-                                                        <div class="col-md-3">
+                                                        <div class="col-md-4">
                                                             <div class="form-group">
                                                                 <label>Equipo</label>
 
 
-                                                                <select id="product" name="product" class="form-control select2 select2-hidden-accessible" style="width: 100%" tabindex="-1" aria-hidden="true" required>
-                                                                    <option selected="selected">Seleccionar producto</option>
+                                                                <select id="equipo" name="equipo" class="form-control" style="width: 100%" tabindex="-1" aria-hidden="true" required>
+                                                                    <option selected="selected">Seleccionar Equipo</option>
                                                                     <#list equipos as equipo>
-                                                                       <option value="${equipo}">${equipo.getNombreEquipo()}</option>
+                                                                       <option value="${equipo.getId()}">${equipo.getNombreEquipo()}</option>
+
+
+                                                                        </select>
+                                                            </div>
+                                                        </div>
 
                                                                     </#list>
 
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-1">
+                                                            <input type="hidden" id="cant[]" name="cant[]">
+                                                            <input type="hidden" id="ids[]" name="ids[]">
+                                                        <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <label>Cantidad</label>
-                                                                <input id="quantity" name="quantity" class="form-control" type="number" value="1" style="width: 75px;" required>
-                                                            </div>
+                                                                <label>Agregar</label>
+                                                             <button type="button" id="agregar" name="agregar" onclick="prueba()" class="btn btn-primary form-control">+</button>
+                                                               </div>
                                                         </div>
-                                                        <div class="col-md-3">
-                                                            <div class="form-group">
-                                                                <label>Condiciones</label>
-                                                                <select id="condiciones" name="condiciones" class="form-control" style="width: 100%;" tabindex="-1" aria-hidden="true">
 
-                                                                    <option selected="selected">Al contado</option>
-                                                                    <option>A credito</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                            <div class="form-group">
-                                                                <label>Añadir Producto</label>
-                                                                <button id="addProduct" type="button" class="btn btn-md btn btn-info btn-block" style="width: 100px; height: 40px">
-                                                                    <span> <i class="fa fa-plus bigicon"></i></span>
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-1">
-                                                            <div class="form-group">
-                                                                <input type="hidden" id="idproducto" name="idproducto" type="text">
-                                                                <input type="hidden" id="items" name="items" value="">
-                                                                <input type="hidden" id="idcliente" name="idcliente">
-                                                            </div>
-                                                        </div>
                                                     </div>
 
                                                     <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div class="table-responsive">
-                                                                <table id="productsTable" class="table table-striped table-bordered table-condensed table-hover">
-                                                                    <thead>
-                                                                    <tr>
-                                                                        <th style="width:40px;"></th>
-                                                                        <th style="width:50px;">Codigo</th>
-                                                                        <th style="width:700;">Descripcion</th>
-                                                                        <th style="width:150px;">Cantidad</th>
-                                                                        <th style="width:100px;">Precio/Unidad</th>
-                                                                        <th style="width:100px;">Total</th>
-                                                                    </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                    </tbody>
-                                                                    <tfoot>
-                                                                    <tr id="st">
-                                                                    </tr>
-                                                                    <tr id="itb">
-                                                                    </tr>
-                                                                    <tr id="tot">
-                                                                    </tr>
-                                                                    </tfoot>
-                                                                </table>
-                                                            </div>
+                                                        <center>
+                                                            <div id="foto" name="foto"></div>
                                                         </div>
+                                                    </center>
+                                                    <br>
+
+                                                    <div class="table-responsive table-bordered card">
+
+
+                                                        <table id="carrito" name="carrito" class="table">
+                                                            <thead>
+                                                            <tr>
+                                                                <th>ID</th>
+                                                                <th>Nombre De Equipo</th>
+                                                                <th>Precio por dia</th>
+                                                            </tr>
+                                                            </thead>
+
+                                                            <tbody>
+
+                                                            </tbody>
+
+                                                        </table>
                                                     </div>
 
-
                                                     <div class="modal-footer">
-                                                        <button onclick="obtenerDatosTabla()" type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
 
 
                                                         <button type="submit"  class="btn btn-info" data-backdrop="true">
@@ -161,17 +131,53 @@
 
 
                                                 </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-primary">Guardar</button>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </form>
+                            <div class="table-responsive">
+                                <table id="rolestable" class="table table-striped table-bordered table-condensed table-hover table-sm">
+                                    <thead>
+                                    <th class="text-center">ID</th>
+                                    <th class="text-center">Nombre de Cliente</th>
+                                    <th class="text-center">Nombre de Equipo</th>
+                                    <th class="text-center">Estado</th>
+
+                                    <th class="text-center">Opciones</th>
+
+
+                                <#list alquileres as alquiler>
+                                <tr>
+
+                                    <td class="text-center">${alquiler.getId()}</td>
+                                    <td class="text-center">${alquiler.getCliente().getNombre()} ${alquiler.getCliente().getApellido()}</td>
+                                    <td class="text-center">${alquiler.getEquipo().getNombreEquipo()}</td>
+                                    <td class="text-center">${alquiler.getEstado()}</td>
+                                    <td>
+
+                                        <div class="btn-group">
+                                            <div class="btn-group">
+                                                <form action="/alquileres/entregado/${alquiler.getId()}" method="GET">
+                                                    <button type="submit" class="btn btn-success"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                                                </form>
+                                            </div>
+                                            <div class="btn-group">
+                                                <form action="/alquileres/eliminar/${alquiler.getId()}" method="POST">
+                                                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash aria-hidden="true"></i></button>
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                    </td>
+
+
+                                </tr>
+                                </#list>
+                                </table>
+                            </div>
 							</div>
 							<!-- END REALTIME CHART -->
-						</div>
+
 					</div>
 				</div>
 			</div>
@@ -187,228 +193,82 @@
 
 <script>
 
+    var id =[];
+    var nombre = [];
+    var precio = [];
+    var nombrealq = [];
+    var precioalq =[];
+    var existencias=[];
+    var ids = [];
+    var imgs=[];
 
-    var arregloCantidad = [];
-    var arregloPrecio = [];
-    var arregloImpuesto = [];
-    var arregloDescuento = [];
-    var arregloSubTotal = [];
-    var arregloTotal = [];
-    var item;
-    var items = [];
-    var itemList = [];
-    var address;
-    var date;
-    var result = 0;
-    var totalFactura = 0;
-    var subTotalFactura = 0;
-    var itbisFactura = 0;
+     <#list equipos as equipo>
 
-    function addProductToTable(){
-        var rows = "";
-        var nombreProducto = document.getElementById('product').value;
-        var cantidadProducto = document.getElementById('quantity').value;
-        var precioProducto = document.getElementById('price').value;
-        var totalProducto = parseFloat(cantidadProducto) * parseFloat(precioProducto);
-        rows += "<td><button class=\"btn btn-danger btn-xs btn-block\"\" onclick=\"removeProductFromTable(this)\">X</button></td><td>"+ nombreProducto +
-                "</td><td>Consulta SQL</td><td>"+ cantidadProducto + "</td><td>"+ precioProducto + "</td><td> " + totalProducto + "</td>";
+            id.push(${equipo.getId()});
+            imgs.push('${equipo.getImagen()}');
+            nombre.push('${equipo.getNombreEquipo()}');
+            precio.push(${equipo.getPrecio()});
+            existencias.push(${equipo.getExistencia()});
 
-        var tbody = document.querySelector("#productsTable tbody");
-        var tr = document.createElement("tr");
-        tr.innerHTML = rows;
-        tbody.appendChild(tr);
+     </#list>
+    $(function() {
 
-    }
+        $('#agregar').prop('disabled', true);
+    });
+    $( "#equipo" ).change(function() {
+        $('#foto').html("");
 
-    function calculateSubTotal(){
 
-        var result = 0;
-        var tbody = document.querySelector("#productsTable tbody");
-        var rows = tbody.rows.length;
-        for(var i = 0; i<rows; i++){
-            var thisTrElem = tbody.rows[i];
-            var thisTdElem = thisTrElem.cells[5];
-            var thisTextNode = thisTdElem.childNodes.item(0);
-            var thisNumber = parseFloat(thisTextNode.data);
-            result+=thisNumber;
-        }
-        result = result.toLocaleString('en')
-        //var itbis = result*0;
-        var itbis = 0;
-        itbisFactura = itbis;
-        // var total = result + itbis;
-        var total = result;
-        total = total.toLocaleString('en')
-        totalFactura = total;
+        for(var i=0;i<id.length;i++){
 
-        var row =  document.getElementById("st");
-        var row2 = document.getElementById("itb");
-        var row3 = document.getElementById("tot")
-        row.innerHTML = "<td id=\"subtotal\" colspan=\"5\" class=\"text-right\"><b>Sub Total $</b></td><td class=\"text-left\">" + result +"</td>";
-        row2.innerHTML = "<td colspan=\"5\" class=\"text-right\"><b>ITBIS $</b></td><td class=\"text-left\">" + itbis.toFixed(2) + "</td>";
-        row3.innerHTML = "<td colspan=\"5\" class=\"text-right\"><b>Total $</b></td><td class=\"text-left\">" + total + "</td>";
-    }
 
-    function removeProductFromTable(btn){
-        var row = btn.parentNode.parentNode;
-        row.parentNode.removeChild(row);
-        calculateSubTotal();
-    }
+                    if(id[i] == document.getElementById("equipo").value){
+                        var inyeccionfoto = '<img src="data:image/jpeg;base64,'+imgs[i]+'" class="img-thumbnail" style="height:200px;width:auto; max-width:200px;">';
+                        $('#foto').html(inyeccionfoto);
 
-    $(document).ready(function() {
+                        if(existencias[i]==0){
+                                $('#agregar').prop('disabled', true);
 
-        $('#client').on('change',function(){
-            var address = $(this).val();
-            var a = JSON.parse(address);
-            $('#direccion').val(a.direccion);
-        });
-        $('#product').on('change',function(){
-            var producto = $(this).val();
-            var a = JSON.parse(producto);
-            $('#idproducto').val(a.id);
-        });
+                            }
 
-        $('#product').on('change',function(){
-            var producto = $(this).val();
-            var a = JSON.parse(producto);
-            $('#price').val(a.precio1);
-        });
+                        else{
+                            $('#agregar').prop('disabled', false);
 
+
+                        }
+                    }
+
+            }
     });
 
 
-    $(document).ready(function(){
+    function prueba(){
+        var equipoid = document.getElementById("equipo").value;
+        for(var i=0;i<id.length;i++){
+            console.log(equipoid)
+            if(id[i] == equipoid){
 
-        $('.select2').select2();
-        $("#addProduct").click(function(){
-
-            var found = false;
-            var cantidadProducto = $('#quantity').val();
-            var precioProducto =$('#price').val();
-            var totalProducto = parseFloat(cantidadProducto) * parseFloat(precioProducto);
-            var descripcionaux = $('#product').val();
-            var descripcion = JSON.parse(descripcionaux);
-            var nombreProducto = $('#product').val();
-            var nombreProducto2 = JSON.parse(nombreProducto);
-            var impuestoaux = $('#product').val();
-            var impuesto = JSON.parse(impuestoaux);
-
-            var cliente = $('#client').val();
-            var cliente2 = JSON.parse(cliente);
-            // console.log(cliente);
-            // arregloCantidad.push(cantidadProducto);
-            // arregloTotal.push(totalProducto);
-            // arregloPrecio.push(precioProducto);
-
-            var result =  parseFloat(cantidadProducto);
-            var tbody = document.querySelector("#productsTable tbody");
-            var rowsn = tbody.rows.length;
-            for(var i = 0; i<rowsn; i++){
-
-                var thisTrElem = tbody.rows[i];
-                var thisTdElem = thisTrElem.cells[1];
-
-                if(thisTdElem.childNodes.item(0).data == nombreProducto2.id){
-                    result+=parseFloat(thisTrElem.cells[3].childNodes.item(0).data);
-                    found = true;
-
-                }
-            }
-
-            var totalProducto2 = parseFloat(result) * parseFloat(precioProducto);
-            var cliente = $('#client').val();
-            var cliente2 = JSON.parse(cliente);
-            $('#idcliente').val(JSON.stringify(cliente2.id));
-            // console.log(cliente);
-
-            // arregloCantidad.push(cantidadProducto);
-            // arregloTotal.push(totalProducto);
-            // arregloPrecio.push(precioProducto);
-            if(found == false){
-                var markup ="<tr><td><button class=\"btn btn-danger btn-xs btn-block\"\" onclick=\"removeProductFromTable(this)\">X</button></td><td>"+ nombreProducto2.id +
-                        "</td><td>"+descripcion.descripcion+"</td><td>"+ result + "</td><td>"+ precioProducto + "</td><td> " + totalProducto2 + "</td></tr>";
-
-
-
-                $("#productsTable tbody").append(markup);
-            }
-
-            else{
-
-                var tableRow = $("td").filter(function() {
-                    return $(this).text() == nombreProducto2.id;
-                }).closest("tr");
-
-                var markup ="<tr><td><button class=\"btn btn-danger btn-xs btn-block\"\" onclick=\"removeProductFromTable(this)\">X</button></td><td>"+ nombreProducto2.id +
-                        "</td><td>"+descripcion.descripcion+"</td><td>"+ result + "</td><td>"+ precioProducto + "</td><td> " + totalProducto2 + "</td></tr>";
-
-
-
-                $(tableRow).replaceWith(markup);
+                nombrealq.push(nombre[i]);
+                precioalq.push(precio[i]);
+                ids.push(equipoid);
+                existencias[i] -= 1;
+                var markup ="<tr><td>"+id[i]+"</td><td>"+nombre[i]+"</td><td>"+precio[i]+"</td></tr>";
+                console.log(markup)
+                $("#carrito tbody").append(markup);
+                console.log($("#carrito tbody"));
 
             }
 
-            calculateSubTotal();
-
-            //  item = {
-            //   idcliente: cliente2.id,
-            //   idproducto: descripcion.id,
-            //   nombre: nombreProducto,
-            //   descripcion: descripcion.descripcion,
-            //   cantidad: cantidadProducto,
-            //   precio: precioProducto,
-            //   subtotal: totalProducto,
-            //   impuesto: impuesto.impuestos,
-            //   total: totalProducto,
-            //   totalFactura: totalFactura,
-            //   itbis: itbisFactura
-            // };
-
-            // items.push(item);
-
-            //  $('#items').val(JSON.stringify(items));
-
-        });
-
-    });
-
-    function obtenerDatosTabla() {
 
 
-        var oTable = document.getElementById('productsTable');
-
-        //gets rows of table
-        var rowLength = oTable.rows.length;
-
-        //loops through rows
-        for (i = 1; i < rowLength; i++){
-
-            items = [];
-            //gets cells of current row
-            var oCells = oTable.rows.item(i).cells;
-
-            //gets amount of cells of current row
-            var cellLength = oCells.length;
-
-            //loops through each cell in current row
-            for(var j = 1; j < cellLength; j++){
-
-                // get your cell info here
-
-                var cellVal = oCells.item(j).innerHTML;
-
-                items.push(cellVal);
-
-
-            }
-            itemList.push(items);
-            //alert(itemList[i-1]);
         }
-        $('#items').val(JSON.stringify(itemList));
+        document.getElementById('equipo').selectedIndex = 0;
+        document.getElementById('ids[]').value = ids;
+        $('#foto').html("");
+
+        $('#agregar').prop('disabled', true);
 
     }
-
-
 
 
 

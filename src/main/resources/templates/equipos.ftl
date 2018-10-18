@@ -16,7 +16,7 @@
 
 						<div class="panel-body">
                                 <button class="btn btn-primary" data-toggle="modal" data-target="#modalEquipo">Crear Equipo</button>
-								<form method="POST" action="/equipos"  enctype='multipart/form-data'>
+								<form method="POST" action="/equipos/"  enctype='multipart/form-data'>
                                     <div class="modal fade" id="modalEquipo" tabindex="-1" role="dialog" aria-labelledby="modalEquipoLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
