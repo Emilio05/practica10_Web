@@ -97,9 +97,6 @@ public class ClienteController {
         return "redirect:/clientes/";
     }
 
-
-
-
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String borrarCliente(@PathVariable String id) {
         Cliente cliente = clienteService.buscarPorId(Long.parseLong(id));

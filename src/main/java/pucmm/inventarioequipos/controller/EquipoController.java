@@ -81,6 +81,7 @@ public class EquipoController {
 //        return equipoService.buscarPorId(id);
 //    }
 
+
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String borrarEquipo(@PathVariable String id) {
         Equipo equipo = equipoService.buscarPorId(Long.parseLong(id));
