@@ -10,7 +10,7 @@ package pucmm.inventarioequipos.repository;
 
 public interface ClienteEquipoRepository extends JpaRepository<ClienteEquipo, Long> {
 
-    @Query(value = "SELECT CLI.NOMBRE, EQ.NOMBRE_EQUIPO, ABS(DATEDIFF('DAY',  ALQ.FECHA_INICIO_ALQUILER, ALQ.FECHA_FIN_ALQUILER) ) AS DIAS " +
+    @Query(value = "SELECT CLI.NOMBRE, EQ.NOMBRE_EQUIPO, ABS(DATEDIFF('DAY',  ALQ.FECHA_INICIO_ALQUILER, ALQ.FECHA_FIN_ALQUILER )) AS DIAS " +
             "FROM ALQUILER ALQ INNER JOIN CLIENTE CLI ON CLI.ID = ALQ.CLIENTE_ID INNER JOIN EQUIPO EQ ON EQ.ID = ALQ.EQUIPO_ID " +
             "WHERE ALQ.ESTADO = 'Pendiente' ORDER BY ALQ.FECHA_INICIO_ALQUILER", nativeQuery = true)
     List<Object[]> equiposAlquiladosNoDevueltos();
