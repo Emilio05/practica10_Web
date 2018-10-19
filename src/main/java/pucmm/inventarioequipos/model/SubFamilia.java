@@ -1,9 +1,13 @@
 package pucmm.inventarioequipos.model;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Where(clause = "deleted = 0")
@@ -19,6 +23,10 @@ public class SubFamilia implements Serializable {
     @ManyToOne(fetch = FetchType.EAGER, optional = true)
     @JoinColumn(name = "categoria_id", nullable = true, updatable = false)
     private Categoria categoria;
+
+    @OneToMany(  mappedBy = "subFamilia", cascade = CascadeType.ALL, orphanRemoval = true)
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private List<Equipo> equipos = new ArrayList<>();
 
     private boolean deleted = false;
 
@@ -52,5 +60,13 @@ public class SubFamilia implements Serializable {
 
     public void setDeleted(boolean deleted) {
         this.deleted = deleted;
+    }
+
+    public List<Equipo> getEquipos() {
+        return equipos;
+    }
+
+    public void setEquipos(List<Equipo> equipos) {
+        this.equipos = equipos;
     }
 }

@@ -35,6 +35,11 @@
                                                         <option value="${category.getNombreCategoria()}">${category.getNombreCategoria()}</option>
                                                     </#list>
                                                     </select>
+                                                    <select id="subfamilia" name="subfamilia" class="form-control select2 select2-hidden-accessible">
+                                                    <#list subfamilias as subfamilia>
+                                                        <option value="${subfamilia.getNombreSubFamilia()}">${subfamilia.getNombreSubFamilia()}</option>
+                                                    </#list>
+                                                    </select>
                                                     <input type="file"  accept="image/png, image/jpeg" id="foto" name="foto">
                                                 </div>
                                                 <div class="modal-footer">

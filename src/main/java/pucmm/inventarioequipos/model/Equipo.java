@@ -34,6 +34,10 @@ public class Equipo implements Serializable {
     @JoinColumn(name = "categoria_id", nullable = true, updatable = false)
     private Categoria categoria;
 
+    @ManyToOne(fetch = FetchType.EAGER, optional = true)
+    @JoinColumn(name = "subfamilia_id", nullable = true, updatable = false)
+    private SubFamilia subFamilia;
+
 
     private boolean deleted = false;
 
@@ -104,5 +108,13 @@ public class Equipo implements Serializable {
 
     public void setDeleted(boolean deleted) {
         this.deleted = deleted;
+    }
+
+    public SubFamilia getSubFamilia() {
+        return subFamilia;
+    }
+
+    public void setSubFamilia(SubFamilia subFamilia) {
+        this.subFamilia = subFamilia;
     }
 }

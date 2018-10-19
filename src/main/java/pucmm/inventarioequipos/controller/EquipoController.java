@@ -8,9 +8,11 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import pucmm.inventarioequipos.model.Categoria;
 import pucmm.inventarioequipos.model.Equipo;
+import pucmm.inventarioequipos.model.SubFamilia;
 import pucmm.inventarioequipos.service.CategoriaServiceImpl;
 import pucmm.inventarioequipos.service.ClienteEquipoServiceImpl;
 import pucmm.inventarioequipos.service.EquipoServiceImpl;
+import pucmm.inventarioequipos.service.SubFamiliaServiceImpl;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -32,6 +34,8 @@ public class EquipoController {
     private EquipoServiceImpl equipoService;
     @Autowired
     private CategoriaServiceImpl categoriaService;
+    @Autowired
+    private SubFamiliaServiceImpl subFamiliaService;
 
     @Autowired
     private ClienteEquipoServiceImpl clienteEquipoService;
@@ -42,6 +46,8 @@ public class EquipoController {
         List<Equipo> equipos = new ArrayList<>();
         equipos = equipoService.buscarTodosEquipos();
         List<Categoria> categories = categoriaService.buscarTodasCategorias();
+        List<SubFamilia> subFamilias = subFamiliaService.buscarTodasSubFamilias();
+        model.addAttribute("subfamilias", subFamilias);
         model.addAttribute("categorias", categories);
         model.addAttribute("equipos", equipos);
         return "equipos";
@@ -49,7 +55,7 @@ public class EquipoController {
 
     @PostMapping("/")
     public String crearEquipo(@RequestParam("foto") MultipartFile foto, @RequestParam("nombre") String nombre, @RequestParam("precio") String precio, @RequestParam("existencia") String existencia,
-                              @RequestParam("categoria") String categoria,
+                              @RequestParam("categoria") String categoria, @RequestParam("subfamilia") String subfamilia,
                               RedirectAttributes redirectAttributes) {
 
 
@@ -77,6 +83,7 @@ public class EquipoController {
         System.out.println(categoria);
         Categoria categoria1 = categoriaService.findByNombreCategoria(categoria);
         equipo.setCategoria(categoria1);
+        equipo.setSubFamilia(subFamiliaService.findByNombreSubFamilia(subfamilia    ));
         equipoService.crearEquipo(equipo);
         return "redirect:/equipos/";
     }

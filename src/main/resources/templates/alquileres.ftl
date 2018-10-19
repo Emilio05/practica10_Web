@@ -69,19 +69,14 @@
                                                             <div class="form-group">
                                                                 <label>Equipo</label>
 
+                                                                <select id="equipo" name="equipo" class="form-control select2 select2-hidden-accessible">
+                                                                <#list equipos as equipo>
+                                                                    <option value="${equipo.getId()}">${equipo.getNombreEquipo()}</option>
+                                                                </#list>
+                                                                </select>
 
-                                                                <select id="equipo" name="equipo" class="form-control" style="width: 100%" tabindex="-1" aria-hidden="true" required>
-                                                                    <option selected="selected">Seleccionar Equipo</option>
-                                                                    <#list equipos as equipo>
-                                                                       <option value="${equipo.getId()}">${equipo.getNombreEquipo()}</option>
-
-
-                                                                        </select>
                                                             </div>
                                                         </div>
-
-                                                                    </#list>
-
                                                             <input type="hidden" id="cant[]" name="cant[]">
                                                             <input type="hidden" id="ids[]" name="ids[]">
                                                         <div class="col-md-4">

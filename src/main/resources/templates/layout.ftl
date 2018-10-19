@@ -1,5 +1,6 @@
+<#import "spring.ftl" as spring />
 <!doctype html>
-<html lang="es">
+<html>
 <head>
     <title>Práctica #10</title>
     <meta charset="utf-8">
@@ -61,7 +62,7 @@
         <div class="clearfix"></div>
         <footer>
             <div class="container-fluid">
-                <p class="copyright">&copy; 2018 <@spring.message "lang.derecho_autor" /></p>
+                <p class="copyright">&copy; 2018 </p>
             </div>
         </footer>
 
