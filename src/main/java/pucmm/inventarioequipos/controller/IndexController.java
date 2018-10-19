@@ -12,13 +12,15 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import pucmm.inventarioequipos.model.Categoria;
+import pucmm.inventarioequipos.model.Rol;
+import pucmm.inventarioequipos.model.Usuario;
 import pucmm.inventarioequipos.service.CategoriaServiceImpl;
 import pucmm.inventarioequipos.service.ClienteEquipoServiceImpl;
+import pucmm.inventarioequipos.service.RolServiceImpl;
+import pucmm.inventarioequipos.service.UsuarioServiceImpl;
 
 import javax.validation.Valid;
-import java.util.List;
-import java.util.Locale;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Controller
@@ -28,18 +30,51 @@ public class IndexController {
     private ClienteEquipoServiceImpl clienteEquipoService;
     @Autowired
     private CategoriaServiceImpl categoriaService;
-
+    @Autowired
+    private UsuarioServiceImpl usuarioService;
+    @Autowired
+    private RolServiceImpl rolService;
 //    @Autowired
 //    private MessageSource messageSource;
 
     @RequestMapping(value = "/")
-    public String index(Model model, Locale locale)
+    public String index(Model model)
     {
         List<Categoria> categorias = categoriaService.buscarTodasCategorias();
         model.addAttribute("categorias",categorias);
        // model.addAttribute("derecho_autor", messageSource.getMessage("derecho_autor", null, locale));
         return "index";
     }
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String loginGET(Model model) {
+
+        for(Usuario usuario : usuarioService.buscarTodosUsuarios()){
+            System.out.println("hola");
+            System.out.println(usuario.getUsername());
+        }
+        if(usuarioService.buscarTodosUsuarios().size() == 0) {
+            Set<Rol> roles = new HashSet<>();
+            Rol rol = new Rol();
+            rol.setNombreRol("ADMIN");
+            rolService.crearRol(rol);
+            usuarioService.crearUsuario(new Usuario(1, "admin", "admin", "admin@gmail.com", rol));
+        }
+        return "login";
+    }
+
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public String loginPOST(
+            @RequestParam(value = "username", required = false) String username,
+            @RequestParam(value = "password", required = false) String password
+    ) {
+        usuarioService.autoLogin(username, password);
+
+        return "redirect:/";
+    }
+
+
     @ResponseBody
     @PostMapping(value = "/graficar")
     public List<Object[]> graficar(@RequestParam("categoria") String categoria, Model model)

@@ -29,7 +29,10 @@ public class UsuariosController {
     {
         List<Usuario> usuarios = new ArrayList<>();
         usuarios = usuarioService.buscarTodosUsuarios();
+        List<Rol> roles = rolService.buscarTodosRoles();
         model.addAttribute("usuarios", usuarios);
+        model.addAttribute("roles", roles);
+
         return "usuarios";
     }
 
@@ -41,6 +44,7 @@ public class UsuariosController {
         u.setUsername(username);
         u.setPassword(password);
         u.setEmail(email);
+        u.setActive(1);
         Rol r = new Rol();
         r = rolService.findByNombreRol(rol);
         u.setRol(r);

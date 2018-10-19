@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="es">
 <#include "layout.ftl">
 <body>
 		<!-- MAIN -->
@@ -10,7 +10,7 @@
 					<!-- OVERVIEW -->
 					<div class="panel panel-headline">
 						<div class="panel-heading">
-							<h3 class="panel-title"><@spring.message "Clientes" /></h3>
+							<h3 class="panel-title">Clientes</h3>
                             <hr>
                         </div>
                         <div class="panel-body">

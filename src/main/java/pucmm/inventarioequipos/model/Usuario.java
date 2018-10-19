@@ -24,9 +24,31 @@ public class Usuario implements Serializable {
     @Column(name = "email")
     private String email;
 
+    private int active;
+
     @ManyToOne(fetch = FetchType.EAGER, optional = true)
     @JoinColumn(name = "rol_id", nullable = true, updatable = false)
     private Rol rol;
+
+    public Usuario(){
+
+    }
+    public Usuario(long id, String username, String password, String email, Rol rol) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.rol = rol;
+        this.active = 1;
+    }
+
+    public int getActive() {
+        return active;
+    }
+
+    public void setActive(int active) {
+        this.active = active;
+    }
 
     public Rol getRol() {
         return rol;

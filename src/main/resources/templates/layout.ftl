@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="es">
 <head>
     <title>Práctica #10</title>
     <meta charset="utf-8">
@@ -61,7 +61,7 @@
         <div class="clearfix"></div>
         <footer>
             <div class="container-fluid">
-                <p class="copyright">&copy; 2018 <@spring.message "derecho_autor" /></p>
+                <p class="copyright">&copy; 2018 <@spring.message "lang.derecho_autor" /></p>
             </div>
         </footer>
 
@@ -77,8 +77,6 @@
 <script src="/assets/scripts/klorofil-common.js"></script>
 <script src="/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js">   </script>
 
-</html>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <script src="/assets/vendor/jquery/jquery.min.js"></script>
 <script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -87,3 +85,4 @@
 <script src="/assets/vendor/chartist/js/chartist.min.js"></script>
 <script src="/assets/scripts/klorofil-common.js"></script>
 <script src="/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+</html>

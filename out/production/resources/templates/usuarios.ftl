@@ -1,5 +1,4 @@
-<!doctype html>
-<html lang="fr">
+
 <#include "layout.ftl">
 <body>
 		<!-- MAIN -->
@@ -10,7 +9,7 @@
 					<!-- OVERVIEW -->
 					<div class="panel panel-headline">
 						<div class="panel-heading">
-							<h3 class="panel-title">Usuarios</h3>
+							<h3 class="panel-title"><@spring.message "lang.Usuarios" /></h3>
                             <hr>
                         </div>
 
@@ -32,7 +31,11 @@
 
                                                     <input type="password" class="form-control" id="password" name="password" placeholder="Contrasena">
                                                     <input type="email" class="form-control" id="email" name="email" placeholder="E-Mail">
-
+                                                    <select id="rol" name="rol" class="form-control select2 select2-hidden-accessible">
+                                                    <#list roles as rol>
+                                                        <option value="${rol.getNombreRol()}">${rol.getNombreRol()}</option>
+                                                    </#list>
+                                                    </select>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -83,5 +86,3 @@
 		</div>
 	<!-- END WRAPPER -->
 </body>
-
-</html>
