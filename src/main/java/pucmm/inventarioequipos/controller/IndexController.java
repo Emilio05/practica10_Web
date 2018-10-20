@@ -49,10 +49,6 @@ public class IndexController {
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginGET(Model model) {
 
-        for(Usuario usuario : usuarioService.buscarTodosUsuarios()){
-            System.out.println("hola");
-            System.out.println(usuario.getUsername());
-        }
         if(usuarioService.buscarTodosUsuarios().size() == 0) {
             Set<Rol> roles = new HashSet<>();
             Rol rol = new Rol();

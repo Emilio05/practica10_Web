@@ -152,6 +152,7 @@
 
                                     <select id="categoria" name="categoria" class="form-control select2 select2-hidden-accessible">
                                         <#list categorias as category>
+                                            <option value="" disabled selected>Seleccione una Categoria</option>
                                             <option value="${category.getNombreCategoria()}">${category.getNombreCategoria()}</option>
                                         </#list>
                                     </select>

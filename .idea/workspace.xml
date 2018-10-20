@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76c5fa1d-49b8-42dc-8dc6-86251357662f" name="Default" comment="clientes, equipos, familia, subfamilia, comienzo de graficos">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pucmm/inventarioequipos/controller/IndexController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/pucmm/inventarioequipos/repository/ClienteEquipoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pucmm/inventarioequipos/repository/ClienteEquipoRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pucmm/inventarioequipos/service/ClienteEquipoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pucmm/inventarioequipos/service/ClienteEquipoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pucmm/inventarioequipos/service/ClienteEquipoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pucmm/inventarioequipos/service/ClienteEquipoServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/resources/templates/index.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/index.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/config/ConfiguracionSeguridad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/config/ConfiguracionSeguridad.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/controller/IndexController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/ClienteEquipoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/ClienteEquipoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/ClienteEquipoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/ClienteEquipoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/ClienteEquipoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/ClienteEquipoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/equipos.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/equipos.ftl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layout.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layout.ftl" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -91,14 +82,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ConfiguracionSeguridad.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/config/ConfiguracionSeguridad.java">
+      <file leaf-file-name="ClienteEquipoRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/ClienteEquipoRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="58" lean-forward="true" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
+            <state>
+              <caret column="31" lean-forward="true" selection-start-column="31" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IndexController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/controller/IndexController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-85">
+              <caret line="50" selection-start-line="50" selection-end-line="50" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.ftl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-860">
+              <caret line="177" column="59" selection-start-line="177" selection-start-column="59" selection-end-line="177" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -407,9 +419,9 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="6152348317828" />
+        <entry key="$PROJECT_DIR$" value="6152700146878" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
-        <entry key="$PROJECT_DIR$/build.gradle" value="216444056" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="3601275143" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="2077093676" />
         <entry key="$PROJECT_DIR$/settings.gradle" value="4243619679" />
       </map>
@@ -656,12 +668,12 @@
         <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/controller/ClienteController.java" />
         <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/ClienteEquipoService.java" />
         <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/service/ClienteEquipoServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/ClienteEquipoRepository.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/equipos.ftl" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/layout.ftl" />
-        <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/controller/IndexController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/index.ftl" />
         <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/config/ConfiguracionSeguridad.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/controller/IndexController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/ClienteEquipoRepository.java" />
       </list>
     </option>
   </component>
@@ -729,6 +741,22 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="inventarioequipos" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="inventarioequipos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="practica10_Web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="inventarioequipos" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="inventarioequipos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="practica10_Web" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -861,11 +889,12 @@
       <workItem from="1539636865122" duration="7528000" />
       <workItem from="1539720343153" duration="19891000" />
       <workItem from="1539778021967" duration="34486000" />
+      <workItem from="1540036727873" duration="5334000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176918000" />
+    <option name="totallyTimeSpent" value="182252000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -878,7 +907,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
@@ -899,10 +927,9 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Version Control" order="13" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33333334" />
-      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.32969153" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20308483" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20565553" />
       <window_info anchor="right" id="Bean Validation" order="8" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info anchor="right" id="Gradle" order="9" />
@@ -915,15 +942,15 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Coverage" order="11" side_tool="true" weight="0.32969153" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="Build" order="12" weight="0.3292683" />
       <window_info id="Designer" order="2" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33333334" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info id="Image Layers" order="3" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33333334" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -931,11 +958,11 @@
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.3292683" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3292683" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" />
@@ -949,8 +976,9 @@
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39972898" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Bean Validation" order="8" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39972898" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1060,25 +1088,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1003">
           <caret line="8" column="52" lean-forward="true" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#693#694#0" expanded="true" />
-            <element signature="e#724#725#0" expanded="true" />
-            <element signature="e#769#770#0" expanded="true" />
-            <element signature="e#809#810#0" expanded="true" />
-            <element signature="e#840#841#0" expanded="true" />
-            <element signature="e#868#869#0" expanded="true" />
-            <element signature="e#909#910#0" expanded="true" />
-            <element signature="e#943#944#0" expanded="true" />
-            <element signature="e#977#978#0" expanded="true" />
-            <element signature="e#1008#1009#0" expanded="true" />
-            <element signature="e#1055#1056#0" expanded="true" />
-            <element signature="e#1095#1096#0" expanded="true" />
-            <element signature="e#1126#1127#0" expanded="true" />
-            <element signature="e#1154#1155#0" expanded="true" />
-            <element signature="e#1195#1196#0" expanded="true" />
-            <element signature="e#1229#1230#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1086,9 +1095,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="969">
           <caret line="90" column="56" selection-start-line="90" selection-start-column="56" selection-end-line="90" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1159,9 +1165,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1176,10 +1179,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
-          <folding>
-            <element signature="e#979#980#0" expanded="true" />
-            <element signature="e#1027#1028#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1222,11 +1221,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="24" column="7" selection-start-line="24" selection-start-column="7" selection-end-line="25" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1046#1047#0" expanded="true" />
-            <element signature="e#1105#1106#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1248,9 +1242,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="53" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1266,16 +1257,6 @@
             <element signature="e#1563#1564#0" expanded="true" />
             <element signature="e#1626#1627#0" expanded="true" />
             <element signature="e#1676#1677#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/ClienteEquipoRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="72" selection-start-line="23" selection-start-column="72" selection-end-line="23" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1321,27 +1302,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/controller/IndexController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="41" column="44" lean-forward="true" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/controller/UsuariosController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3009">
-          <caret line="177" column="75" lean-forward="true" selection-start-line="177" selection-start-column="75" selection-end-line="177" selection-end-column="75" />
         </state>
       </provider>
     </entry>
@@ -1354,11 +1318,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/config/ConfiguracionSeguridad.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="58" lean-forward="true" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
+        <state relative-caret-position="-374">
+          <caret line="17" column="58" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/repository/ClienteEquipoRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="31" lean-forward="true" selection-start-column="31" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pucmm/inventarioequipos/controller/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-860">
+          <caret line="177" column="59" selection-start-line="177" selection-start-column="59" selection-end-line="177" selection-end-column="59" />
         </state>
       </provider>
     </entry>
