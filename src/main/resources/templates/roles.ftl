@@ -57,15 +57,7 @@
                                     <td class="text-center">
 
                                         <div class="btn-group">
-                                        <div class="btn-group">
-                                            <form action="/roles/ver/${rol.getId()}" method="GET">
-                                            <button type="submit" class="btn btn-success"><i class="fa fa-eye" aria-hidden="true"></i></button>
-                                                </form>
-                                            </div>
-                                        <div class="btn-group">
-                                                <button type="button" onclick="modificar(${rol.getId()}, '${rol.getNombreRol()}')" data-toggle="modal" data-target="#modalRol2" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
 
-                                            </div>
                                         <div class="btn-group">
                                             <form action="/roles/eliminar/${rol.getId()}" method="POST">
                                                 <button type="submit" class="btn btn-danger"><i class="fa fa-trash aria-hidden="true"></i></button>

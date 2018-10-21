@@ -10,7 +10,7 @@
             <!-- OVERVIEW -->
             <div class="panel panel-headline">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Familiasa</h3>
+                    <h3 class="panel-title">Familias</h3>
                     <hr>
                 </div>
                 <div class="panel-body">
@@ -53,8 +53,6 @@
                                     <td class="text-center">${categoria.getNombreCategoria()}</td>
                                     <td class="text-center">
                                         <div class="btn-group">
-                                            <a href="#" class="btn btn-success"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                            <a href="#" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                             <a href="/categorias/${categoria.getId()}" class="btn btn-danger"><i class="fa fa-trash aria-hidden="true"></i></a>
                                         </div>
                                     </td>
