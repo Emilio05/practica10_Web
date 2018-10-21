@@ -32,7 +32,7 @@ public class CategoriaServiceImpl implements CategoriaService {
     }
     @Override
     public Categoria buscarPorId(long id){
-        return categoriaRepository.findById(id).get();
+        return categoriaRepository.findOne(id);
     }
     public Categoria findByNombreCategoria(String nombre){
         return categoriaRepository.findByNombreCategoria(nombre);

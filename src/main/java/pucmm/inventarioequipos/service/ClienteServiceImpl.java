@@ -33,7 +33,7 @@ public class ClienteServiceImpl implements ClienteService {
     }
     @Override
     public Cliente buscarPorId(long id){
-        return clienteRepository.findById(id).get();
+        return clienteRepository.findOne(id);
     }
     public Cliente findByNombre(String nombre){
         return clienteRepository.findByNombre(nombre);

@@ -39,7 +39,7 @@ public class UsuariosController {
 
 
     @PostMapping("/")
-    public String crearEquipo(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("email") String email, @RequestParam("rol") String rol){
+    public String crearUsuario(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("email") String email, @RequestParam("rol") String rol){
         Usuario u = new Usuario();
         u.setUsername(username);
         u.setPassword(password);
@@ -51,4 +51,26 @@ public class UsuariosController {
         usuarioService.crearUsuario(u);
         return "redirect:/usuarios/";
     }
+
+    @PostMapping("/modificar/")
+    public String modificarUsuario(@RequestParam("username2") String username, @RequestParam("id2") String id,@RequestParam("password2") String password, @RequestParam("email2") String email, @RequestParam("rol2") String rol){
+        Usuario u = usuarioService.buscarPorId(Long.parseLong(id));
+        Rol r = rolService.findByNombreRol(rol);
+        u.setRol(r);
+        u.setUsername(username);
+        u.setPassword(password);
+        u.setEmail(email);
+
+        usuarioService.actualizarUsuario(u);
+        return "redirect:/usuarios/";
+    }
+
+
+    @PostMapping(value = "/eliminar/{id}")
+    public String borrarRol(@PathVariable String id) {
+        rolService.borrarRolPorId(Long.parseLong(id));
+        return "redirect:/usuarios/";
+    }
+
+
 }

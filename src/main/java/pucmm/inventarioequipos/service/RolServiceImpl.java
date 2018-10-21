@@ -22,7 +22,7 @@ public class RolServiceImpl implements RolService {
         crearRol(rol);
     }
     public void borrarRolPorId(long id){
-        rolRepository.deleteById(id);
+        rolRepository.delete(id);
     }
     public void borrarTodosLosRoles(){
         rolRepository.deleteAll();
@@ -32,7 +32,7 @@ public class RolServiceImpl implements RolService {
     }
     @Override
     public Rol buscarPorId(long id){
-        return rolRepository.findById(id).get();
+        return rolRepository.findOne(id);
     }
     public Rol findByNombreRol(String nombreRol){
         return rolRepository.findByNombreRol(nombreRol);

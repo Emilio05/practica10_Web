@@ -28,7 +28,7 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Familia">
+                                                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Familia" required>
 
 
                                                 </div>
@@ -93,7 +93,7 @@
                                             </div>
                                             <div class="modal-body">
                                                 <input type="hidden" name="id" id="id">
-                                                <input type="text" class="form-control" id="nombrerol" name="familia" placeholder="Familia">
+                                                <input type="text" class="form-control" id="nombrerol" name="familia" placeholder="Familia" required>
 
 
                                             </div>

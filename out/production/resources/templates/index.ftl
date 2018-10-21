@@ -1,7 +1,9 @@
+
 <!doctype html>
-<html lang="en" xmlns="">
 <#include "layout.ftl">
+<html>
 <body>
+		<@spring.message "inicio" />
 		<!-- MAIN -->
 		<div class="main">
 			<!-- MAIN CONTENT -->
@@ -331,6 +333,9 @@
 
 			<!-- END MAIN CONTENT -->
 		</div>
+
+</div>
+
 	<!-- END WRAPPER -->
 </body>
 

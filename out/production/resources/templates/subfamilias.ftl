@@ -27,8 +27,8 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre de la SubFamilia">
-                                        <select id="categoria" name="categoria" class="form-control select2 select2-hidden-accessible">
+                                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre de la SubFamilia" required>
+                                        <select id="categoria" name="categoria" class="form-control select2 select2-hidden-accessible" required>
                                                     <#list categorias as category>
                                                         <option value="${category.getNombreCategoria()}">${category.getNombreCategoria()}</option>
                                                     </#list>

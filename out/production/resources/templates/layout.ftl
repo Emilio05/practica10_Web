@@ -1,6 +1,6 @@
-<#import "spring.ftl" as spring />
-<!doctype html>
-<html>
+
+<!doctype html >
+<html lang="en">
 <head>
     <title>Práctica #10</title>
     <meta charset="utf-8">
@@ -26,10 +26,12 @@
     <!-- WRAPPER -->
     <div id="wrapper">
         <nav class="navbar navbar-default navbar-fixed-top">
-        <!-- NAVBAR -->
-            <div class="brand">
-                <a href="index.html"><img src="/assets/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
-            </div>
+
+            <ul class="nav nav-pills">
+
+                <li><a href="/logout" class="text-right">Cerrar Sesion</a></li>
+
+                 </ul>
         </nav>
         <!-- END NAVBAR -->
         <!-- LEFT SIDEBAR -->
@@ -37,24 +39,17 @@
             <div class="sidebar-scroll">
                 <nav>
                     <ul class="nav">
-                        <li><a href="/" class="active"><i class="lnr lnr-home"></i> <span>Inicio</span></a></li>
-                        <li><a href="/usuarios/" class=""><i class="lnr lnr-code"></i> <span>Usuarios</span></a></li>
-                        <li><a href="/clientes/" class=""><i class="lnr lnr-chart-bars"></i> <span>Clientes</span></a></li>
-                        <li><a href="/equipos/" class=""><i class="lnr lnr-cog"></i> <span>Equipos</span></a></li>
-                        <li><a href="/roles/" class=""><i class="lnr lnr-alarm"></i> <span>Roles</span></a></li>
-                        <li><a href="/categorias/" class=""><i class="lnr lnr-alarm"></i> <span>Familias</span></a></li>
-                        <li><a href="/alquileres/" class=""><i class="lnr lnr-alarm"></i> <span>Alquiler</span></a></li>
+                        <li><a href="/" class=""><span><@spring.message "inicio" /></span></a></li>
+                        <li><a href="/usuarios/" class=""><span><@spring.message "usuarios"/></span></a></li>
+                        <li><a href="/clientes/" class=""><span><@spring.message "clientes"/></span></a></li>
+                        <li><a href="/equipos/" class=""> <span><@spring.message "equipos"/></span></a></li>
+                        <li><a href="/roles/" class=""><span><@spring.message "roles"/></span></a></li>
+                        <li><a href="/categorias/" class=""><span><@spring.message "familias"/></span></a></li>
+                        <li><a href="/subfamilias/" class=""></i> <span><@spring.message "subfamilias"/></span></a></li>
+                        <li><a href="/equipos/nodevueltos/" class=""><span><@spring.message "nodevueltos"/></span></a></li>
+                        <li><a href="/alquileres/" class=""><span><@spring.message "alquileres"/></span></a></li>
 
-                        <#--<li>-->
-                            <#--<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Pages</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>-->
-                            <#--<div id="subPages" class="collapse ">-->
-                                <#--<ul class="nav">-->
-                                    <#--<li><a href="page-profile.html" class="">Profile</a></li>-->
-                                    <#--<li><a href="page-login.html" class="">Login</a></li>-->
-                                    <#--<li><a href="page-lockscreen.html" class="">Lockscreen</a></li>-->
-                                <#--</ul>-->
-                            <#--</div>-->
-                        <#--</li>-->
+                     
                     </ul>
                 </nav>
             </div>
@@ -62,9 +57,10 @@
         <div class="clearfix"></div>
         <footer>
             <div class="container-fluid">
-                <p class="copyright">&copy; 2018 </p>
+                <p class="copyright"><@spring.message "derecho_autor" /></p>
             </div>
         </footer>
+
 
     
 </body>

@@ -34,15 +34,18 @@ public class IndexController {
     private UsuarioServiceImpl usuarioService;
     @Autowired
     private RolServiceImpl rolService;
-//    @Autowired
-//    private MessageSource messageSource;
+
+    @Autowired
+    private MessageSource messageSource;
 
     @RequestMapping(value = "/")
-    public String index(Model model)
+    public String index(Model model, Locale locale)
     {
         List<Categoria> categorias = categoriaService.buscarTodasCategorias();
         model.addAttribute("categorias",categorias);
-       // model.addAttribute("derecho_autor", messageSource.getMessage("derecho_autor", null, locale));
+//        model.addAttribute("saludo", messageSource.getMessage("saludo", null, locale));
+
+        // model.addAttribute("derecho_autor", messageSource.getMessage("derecho_autor", null, locale));
         return "index";
     }
 

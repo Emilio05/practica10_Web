@@ -46,7 +46,7 @@
                                                                 <label>Fecha</label>
                                                                 <div class='input-group'>
                                                                     <div class='input-group date'>
-                                                                        <input id="datepicker" name="fecha" class="form-control pull-right" type="date">
+                                                                        <input id="datepicker" name="fecha" class="form-control pull-right" type="date" required>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -57,7 +57,7 @@
                                                                 <label>Fecha de promesa</label>
                                                                 <div class='input-group'>
                                                                     <div class='input-group date'>
-                                                                        <input id="datepicker" name="fechaentrega" class="form-control pull-right" type="date">
+                                                                        <input id="datepicker" name="fechaentrega" class="form-control pull-right" type="date" required>
                                                                     </div>
                                                                 </div>
                                                                   </div>
@@ -69,7 +69,7 @@
                                                             <div class="form-group">
                                                                 <label>Equipo</label>
 
-                                                                <select id="equipo" name="equipo" class="form-control select2 select2-hidden-accessible">
+                                                                <select id="equipo" name="equipo" class="form-control select2 select2-hidden-accessible" required>
                                                                 <#list equipos as equipo>
                                                                     <option value="${equipo.getId()}">${equipo.getNombreEquipo()}</option>
                                                                 </#list>

@@ -27,20 +27,20 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre del Equipo">
-                                                    <input type="text" class="form-control" id="precio" name="precio" placeholder="Precio del Equipo">
-                                                    <input type="text" class="form-control" id="existencia" name="existencia" placeholder="Existencia del Equipo">
-                                                    <select id="categoria" name="categoria" class="form-control select2 select2-hidden-accessible">
+                                                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre del Equipo" required>
+                                                    <input type="text" class="form-control" id="precio" name="precio" placeholder="Precio del Equipo" required>
+                                                    <input type="text" class="form-control" id="existencia" name="existencia" placeholder="Existencia del Equipo" required>
+                                                    <select id="categoria" name="categoria" class="form-control select2 select2-hidden-accessible" required>
                                                     <#list categorias as category>
                                                         <option value="${category.getNombreCategoria()}">${category.getNombreCategoria()}</option>
                                                     </#list>
                                                     </select>
-                                                    <select id="subfamilia" name="subfamilia" class="form-control select2 select2-hidden-accessible">
+                                                    <select id="subfamilia" name="subfamilia" class="form-control select2 select2-hidden-accessible" required>
                                                     <#list subfamilias as subfamilia>
                                                         <option value="${subfamilia.getNombreSubFamilia()}">${subfamilia.getNombreSubFamilia()}</option>
                                                     </#list>
                                                     </select>
-                                                    <input type="file"  accept="image/png, image/jpeg" id="foto" name="foto">
+                                                    <input type="file"  accept="image/png, image/jpeg" id="foto" name="foto" required>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -100,15 +100,15 @@
                                             </div>
                                             <div class="modal-body">
                                                 <input type="hidden" name="id2" id="id2">
-                                                <input type="text" class="form-control" id="nombre2" name="nombre2" placeholder="Nombre del Equipo">
-                                                <input type="text" class="form-control" id="precio2" name="precio2" placeholder="Precio del Equipo">
-                                                <input type="text" class="form-control" id="existencia2" name="existencia2" placeholder="Existencia del Equipo">
-                                                <select id="categoria2" name="categoria2" class="form-control select2 select2-hidden-accessible">
+                                                <input type="text" class="form-control" id="nombre2" name="nombre2" placeholder="Nombre del Equipo" required>
+                                                <input type="text" class="form-control" id="precio2" name="precio2" placeholder="Precio del Equipo" required>
+                                                <input type="text" class="form-control" id="existencia2" name="existencia2" placeholder="Existencia del Equipo" required>
+                                                <select id="categoria2" name="categoria2" class="form-control select2 select2-hidden-accessible" required>
                                                     <#list categorias as category>
                                                         <option value="${category.getNombreCategoria()}">${category.getNombreCategoria()}</option>
                                                     </#list>
                                                 </select>
-                                                <input type="file"  accept="image/png, image/jpeg" id="foto2" name="foto2">
+                                                <input type="file"  accept="image/png, image/jpeg" id="foto2" name="foto2" required>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

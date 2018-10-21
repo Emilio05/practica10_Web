@@ -28,7 +28,7 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <input type="text" class="form-control" id="nombrerol" name="nombrerol" placeholder="Nombre de Rol">
+                                                    <input type="text" class="form-control" id="nombrerol" name="nombrerol" placeholder="Nombre de Rol" required>
 
 
                                                 </div>
@@ -93,7 +93,7 @@
                                             </div>
                                             <div class="modal-body">
                                                 <input type="hidden" name="id2" id="id2">
-                                                <input type="text" class="form-control" id="nombrerol2" name="nombrerol2" placeholder="Nombre de Rol">
+                                                <input type="text" class="form-control" id="nombrerol2" name="nombrerol2" placeholder="Nombre de Rol" required>
 
 
                                             </div>
