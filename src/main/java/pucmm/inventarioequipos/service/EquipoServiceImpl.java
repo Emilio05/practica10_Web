@@ -34,7 +34,7 @@ public class EquipoServiceImpl implements EquipoService {
     }
     @Override
     public Equipo buscarPorId(long id){
-        return equipoRepository.findOne(id);
+        return equipoRepository.findById(id).get();
     }
     public Equipo findByNombreEquipo(String nombre){
         return equipoRepository.findByNombreEquipo(nombre);

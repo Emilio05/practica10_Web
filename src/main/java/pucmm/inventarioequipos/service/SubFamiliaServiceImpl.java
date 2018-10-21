@@ -35,7 +35,7 @@ public class SubFamiliaServiceImpl implements SubFamiliaService {
     }
     @Override
     public SubFamilia buscarPorId(long id){
-        return subFamiliaRepository.findOne(id);
+        return subFamiliaRepository.findById(id).get();
     }
     public SubFamilia findByNombreSubFamilia(String nombre){
         return subFamiliaRepository.findByNombreSubFamilia(nombre);

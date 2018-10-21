@@ -71,7 +71,7 @@ public class UsuarioServiceImpl implements UsuarioService, SecurityService {
         crearUsuario(usuario);
     }
     public void borrarUsuarioPorId(long id){
-        usuarioRepository.delete(id);
+        usuarioRepository.deleteById(id);
     }
     public void borrarTodosLosUsuarios(){
         usuarioRepository.deleteAll();
@@ -81,7 +81,7 @@ public class UsuarioServiceImpl implements UsuarioService, SecurityService {
     }
     @Override
     public Usuario buscarPorId(long id){
-        return usuarioRepository.findOne(id);
+        return usuarioRepository.findById(id).get();
     }
     public Usuario findByUsername(String username){
         return usuarioRepository.findByUsername(username);

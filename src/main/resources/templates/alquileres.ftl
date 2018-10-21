@@ -1,5 +1,4 @@
-<!doctype html>
-<html lang="en">
+
 <#include "layout.ftl">
 <body>
 		<!-- MAIN -->
@@ -70,6 +69,7 @@
                                                                 <label>Equipo</label>
 
                                                                 <select id="equipo" name="equipo" class="form-control select2 select2-hidden-accessible" required>
+                                                                    <option value="">Seleccionar equipo</option>
                                                                 <#list equipos as equipo>
                                                                     <option value="${equipo.getId()}">${equipo.getNombreEquipo()}</option>
                                                                 </#list>
@@ -184,7 +184,6 @@
 	<!-- END WRAPPER -->
 </body>
 
-</html>
 
 <script>
 
@@ -202,7 +201,7 @@
             id.push(${equipo.getId()});
             imgs.push('${equipo.getImagen()}');
             nombre.push('${equipo.getNombreEquipo()}');
-            precio.push(${equipo.getPrecio()});
+            precio.push('${equipo.getPrecio()}');
             existencias.push(${equipo.getExistencia()});
 
      </#list>

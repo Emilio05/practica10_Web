@@ -28,8 +28,8 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre del Equipo" required>
-                                                    <input type="text" class="form-control" id="precio" name="precio" placeholder="Precio del Equipo" required>
-                                                    <input type="text" class="form-control" id="existencia" name="existencia" placeholder="Existencia del Equipo" required>
+                                                    <input type="number" class="form-control" id="precio" name="precio" placeholder="Precio del Equipo" required>
+                                                    <input type="number" class="form-control" id="existencia" name="existencia" placeholder="Existencia del Equipo" required>
                                                     <select id="categoria" name="categoria" class="form-control select2 select2-hidden-accessible" required>
                                                     <#list categorias as category>
                                                         <option value="${category.getNombreCategoria()}">${category.getNombreCategoria()}</option>

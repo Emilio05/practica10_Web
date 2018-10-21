@@ -19,6 +19,7 @@ import pucmm.inventarioequipos.service.ClienteEquipoServiceImpl;
 import pucmm.inventarioequipos.service.RolServiceImpl;
 import pucmm.inventarioequipos.service.UsuarioServiceImpl;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -39,10 +40,11 @@ public class IndexController {
     private MessageSource messageSource;
 
     @RequestMapping(value = "/")
-    public String index(Model model, Locale locale)
+    public String index(Model model, Locale locale, HttpServletRequest request)
     {
         List<Categoria> categorias = categoriaService.buscarTodasCategorias();
         model.addAttribute("categorias",categorias);
+        model.addAttribute("puerto", ""+request.getLocalPort());
 //        model.addAttribute("saludo", messageSource.getMessage("saludo", null, locale));
 
         // model.addAttribute("derecho_autor", messageSource.getMessage("derecho_autor", null, locale));
@@ -57,6 +59,9 @@ public class IndexController {
             Rol rol = new Rol();
             rol.setNombreRol("ADMIN");
             rolService.crearRol(rol);
+            Rol rol2 = new Rol();
+            rol2.setNombreRol("Vendedor");
+            rolService.crearRol(rol2);
             usuarioService.crearUsuario(new Usuario(1, "admin", "admin", "admin@gmail.com", rol));
         }
         return "login";

@@ -23,7 +23,7 @@ public class FacturaEquipoServiceImpl implements FacturaEquipoService {
         crearFacturaEquipo(facturaEquipo);
     }
     public void borrarFacturaEquipoPorId(long id){
-        facturaEquipoRepository.delete(id);
+        facturaEquipoRepository.deleteById(id);
     }
     public void borrarTodasLasFacturaEquipos(){
         facturaEquipoRepository.deleteAll();
@@ -33,7 +33,7 @@ public class FacturaEquipoServiceImpl implements FacturaEquipoService {
     }
     @Override
     public FacturaEquipo buscarPorId(long id){
-        return facturaEquipoRepository.findOne(id);
+        return facturaEquipoRepository.findById(id).get();
     }
 
     public boolean facturaEquipoExiste(FacturaEquipo facturaEquipo){

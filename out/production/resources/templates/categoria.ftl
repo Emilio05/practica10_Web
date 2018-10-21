@@ -10,25 +10,25 @@
             <!-- OVERVIEW -->
             <div class="panel panel-headline">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Categorias</h3>
+                    <h3 class="panel-title">Familiasa</h3>
                     <hr>
                 </div>
                 <div class="panel-body">
 
 
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalCategorias">Crear Categoria</button>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalCategorias">Crear Familia</button>
                     <form method="POST" action="/categorias/">
                         <div class="modal fade" id="modalCategorias" tabindex="-1" role="dialog" aria-labelledby="modalCategoriasLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="modalCategoriasLabel">Crear Categoria</h5>
+                                        <h5 class="modal-title" id="modalCategoriasLabel">Crear Familia</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre Categoria">
+                                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre Familia">
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

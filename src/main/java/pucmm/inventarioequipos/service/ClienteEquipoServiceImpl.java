@@ -33,7 +33,7 @@ public class ClienteEquipoServiceImpl implements ClienteEquipoService {
     }
     @Override
     public ClienteEquipo buscarPorId(long id){
-        return clienteEquipoRepository.findOne(id);
+        return clienteEquipoRepository.findById(id).get();
     }
 
     public boolean clienteEquipoExiste(ClienteEquipo clienteEquipo){
