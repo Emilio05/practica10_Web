@@ -4,6 +4,8 @@
     <bytecodeTargetLevel>
       <module name="inventarioequipos_main" target="1.8" />
       <module name="inventarioequipos_test" target="1.8" />
+      <module name="topograpp_main" target="1.8" />
+      <module name="topograpp_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
