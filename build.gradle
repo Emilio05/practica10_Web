@@ -23,7 +23,7 @@ test {
 }
 
 
-mainClassName = 'pucmm.inventarioequipos.InventarioequiposApplication'
+mainClassName = 'pucmm.topograpp.InventarioequiposApplication'
 group = 'pucmm'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
@@ -38,10 +38,10 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-freemarker')
     compile('org.springframework.boot:spring-boot-starter-security')
     compile('org.springframework.boot:spring-boot-starter-web')
-    //módulo para trabajar con Spring session.
-    compile('org.springframework.session:spring-session-core')
-    //módulo para trabajar con Hazelcast.
-    compile('org.springframework.session:spring-session-hazelcast')
+//    compile('org.springframework.session:spring-session-core')
+//    compile('org.springframework.session:spring-session-hazelcast')
+    compile('com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.4.0')
+    compile('org.springframework.boot:spring-boot-starter-mail:2.0.1.RELEASE')
     runtime('com.h2database:h2')
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('org.springframework.security:spring-security-test')

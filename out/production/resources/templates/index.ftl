@@ -1,250 +1,365 @@
+<#include "header.ftl">
 
-<!doctype html>
-<#include "layout.ftl">
-<html>
-<body>
+        <div class="page-wrapper">
+            <!-- Bread crumb -->
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h3 class="text-primary">Información Relevante</h3> </div>
 
-		<!-- MAIN -->
-		<div class="main">
-			<!-- MAIN CONTENT -->
-			<div class="main-content">
-				<div class="container-fluid">
+            </div>
+            <!-- End Bread crumb -->
+            <!-- Container fluid  -->
+            <div class="container-fluid">
 
-						<div class="col-md-6">
-							<!-- MULTI CHARTS -->
+                <select class="form-control" id="ajaxselect">
+                <option value="">Seleccione una pràctica..</option>
+                    <#list practicas as practica>
+                    <option value="${practica.getId()}">${practica.getName()}</option>
+                    </#list>
+                </select>
 
-                            <p>Puerto: ${puerto}</p>
-                            <div class="panel">
-                                <div class="panel-heading">
 
-                                    <select id="categoria" name="categoria" class="form-control select2 select2-hidden-accessible">
-                                        <#list categorias as category>
-                                            <option value="" disabled selected>Seleccione una Categoria</option>
-                                            <option value="${category.getNombreCategoria()}">${category.getNombreCategoria()}</option>
-                                        </#list>
-                                    </select>
-                                </div>
-                                <div class="panel-body no-padding">
-                                    <canvas id="myChart" width="400" height="400"></canvas>
-                                </div>
-
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Actividad por usuario </h4>
                             </div>
-							<!-- END MULTI CHARTS -->
+                            <div class="card-body">
+                                <div class="table-responsive">
 
-							<!-- END REALTIME CHART -->
-						</div>
-					</div>
-				</div>
-			</div>
+                                    <canvas id="cambios"></canvas>
+                                       </div>
+                            </div>
+                        </div>
+                    </div>
 
-			<!-- END MAIN CONTENT -->
-		</div>
-</div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Grafico del terreno </h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
 
-	<!-- END WRAPPER -->
-</body>
+                                    <canvas id="plano"></canvas>
+                                    <div class="text-right">
+                                    <button id="export" onclick="exportButton()" class="btn btn-primary" disabled>Exportar a CSV</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                    <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Historial </h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Descripción</th>
+                                                <th>Estado</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <#list practicas as practica>
+                                            <tr>
+                                                <td>
+                                                	${practica.getId()}
+                                                </td>
+                                                <td>${practica.getName()}</td>
+                                                <td><span class="badge badge-success">Finalizado</span></td>
+
+                                            </tr>
+                                            <#else>
+                                            </#list>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-title">
+                                    <h4>Conclusiones </h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+
+                                        <div id="concl"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+
+            </div>
+
+
+
+
+
+                <!-- End PAge Content -->
+
+        <!-- End Page wrapper  -->
+    </div>
 
 <script>
 
-    $(function() {
-        var data, options;
+    var nombres = [];
+    var frecuencias = [];
+    var address;
+    var estruct = {
+        id: Number,
+        x: Number,
+        y: Number,
+        deleted: Boolean
+    };
 
-        // headline charts
-        data = {
-            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-            series: [
-                [23, 29, 24, 40, 25, 24, 35],
-                [14, 25, 18, 34, 29, 38, 44],
-            ]
-        };
+    function exportButton(){
 
-        options = {
-            height: 300,
-            showArea: true,
-            showLine: false,
-            showPoint: false,
-            fullWidth: true,
-            axisX: {
-                showGrid: false
+        $.ajax({
+            url: '/puntos/' + address,
+            error: function () {
+                console.log("An error ocurred.");
             },
-            lineSmooth: false,
-        };
+            success: function (data) {
 
-        new Chartist.Line('#headline-chart', data, options);
-
-
-        // visits trend charts
-        data = {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-            series: [{
-                name: 'series-real',
-                data: [200, 380, 350, 320, 410, 450, 570, 400, 555, 620, 750, 900],
-            }, {
-                name: 'series-projection',
-                data: [240, 350, 360, 380, 400, 450, 480, 523, 555, 600, 700, 800],
-            }]
-        };
-
-        options = {
-            fullWidth: true,
-            lineSmooth: false,
-            height: "270px",
-            low: 0,
-            high: 'auto',
-            series: {
-                'series-projection': {
-                    showArea: true,
-                    showPoint: false,
-                    showLine: false
-                },
-            },
-            axisX: {
-                showGrid: false,
+                estruct = JSON.stringify(data);
+                exportToCsv("puntosADibujar", estruct);
 
             },
-            axisY: {
-                showGrid: false,
-                onlyInteger: true,
-                offset: 0,
-            },
-            chartPadding: {
-                left: 20,
-                right: 20
-            }
-        };
-
-        new Chartist.Line('#visits-trends-chart', data, options);
-
-
-        // visits chart
-        data = {
-            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-            series: [
-                [6384, 6342, 5437, 2764, 3958, 5068, 7654]
-            ]
-        };
-
-        options = {
-            height: 300,
-            axisX: {
-                showGrid: false
-            },
-        };
-
-        new Chartist.Bar('#visits-chart', data, options);
-
-
-        // real-time pie chart
-        var sysLoad = $('#system-load').easyPieChart({
-            size: 130,
-            barColor: function(percent) {
-                return "rgb(" + Math.round(200 * percent / 100) + ", " + Math.round(200 * (1.1 - percent / 100)) + ", 0)";
-            },
-            trackColor: 'rgba(245, 245, 245, 0.8)',
-            scaleColor: false,
-            lineWidth: 5,
-            lineCap: "square",
-            animate: 800
+            type: 'GET'
         });
 
-        var updateInterval = 3000; // in milliseconds
+    }
 
-        setInterval(function() {
-            var randomVal;
-            randomVal = getRandomInt(0, 100);
+    $('#ajaxselect').on('change',function(){
 
-            sysLoad.data('easyPieChart').update(randomVal);
-            sysLoad.find('.percent').text(randomVal);
-        }, updateInterval);
+        $('#export').prop('disabled',false);
+        address = $(this).val();
+        $.ajax({
+            url: '/practica/'+address,
+            error: function () {
+                console.log("An error ocurred.");
+            },
+            success: function (data) {
 
-        function getRandomInt(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
+                $.ajax({
+                    url: '/puntos/' + address,
+                    error: function () {
+                        console.log("An error ocurred.");
+                    },
+                    success: function (data) {
+
+                        var x = new Chart(document.getElementById("plano"), {
+
+                            type: 'scatter',
+                            data: {
+                                datasets: [{
+                                    data: [{
+                                        x: 1,
+                                        y: 1
+                                    }, {
+                                        x: 3,
+                                        y: 7
+                                    }, {
+                                        x: 6,
+                                        y: 5
+                                    }, { // add same data as the first one, to draw the closing line
+                                        x: 1,
+                                        y: 1
+                                    }],
+                                    borderColor: 'black',
+                                    borderWidth: 1,
+                                    pointBackgroundColor: ['#000', '#00bcd6', '#d300d6'],
+                                    pointBorderColor: ['#000', '#00bcd6', '#d300d6'],
+                                    pointRadius: 5,
+                                    pointHoverRadius: 5,
+                                    fill: false,
+                                    tension: 0,
+                                    showLine: true
+                                }]
+                            },
+                            options: {
+                                legend: false,
+                                tooltips: false,
+                                scales: {
+                                    xAxes: [{
+                                        ticks: {
+                                            min: 0,
+                                            max: 10
+                                        },
+                                        gridLines: {
+                                            color: '#888',
+                                            drawOnChartArea: false
+                                        }
+                                    }],
+                                    yAxes: [{
+                                        ticks: {
+                                            min: 0,
+                                            max: 8,
+                                            padding: 10
+                                        },
+                                        gridLines: {
+                                            color: '#888',
+                                            drawOnChartArea: false
+                                        }
+                                    }]
+                                }
+                            }
+
+                           });
+                    },
+                    type: 'GET'
+                });
+
+                document.getElementById('concl').innerHTML = data["conclusion"];
+                $.ajax({
+                    url: '/nombres/'+address,
+                    error: function () {
+                        console.log("An error ocurred.");
+                    },
+                    success: function (data) {
+                            nombres = data;
+                            frecuencias =[];
+
+                        $.ajax({
+                            url: '/frecuencia/'+address,
+                            error: function () {
+                                console.log("An error ocurred.");
+                            },
+                            success: function (data) {
+                                for(var i=0; i<nombres.length; i++){
+                                    frecuencias.push(data[nombres[i]]);}
+
+                                new Chart(document.getElementById("cambios"), {
+                                    type: 'bar',
+                                    data: {
+                                        labels: nombres,
+                                        datasets: [
+
+                                            {
+                                                label: "Distancias",
+                                                backgroundColor: ["#3e95cd"],
+                                                data: frecuencias
+                                            },
+                                            {
+                                                label: "Ángulos",
+                                                backgroundColor: '#D6E9C6',
+                                                data: [1]
+                                            }
+                                        ]
+                                    },
+                                    options: {
+                                        legend: { display: false },
+                                        title: {
+                                            display: false,
+                                            text: 'Predicted world population (millions) in 2050'
+                                        },
+                                        scales: {
+                                            xAxes: [{
+                                                ticks: {
+                                                    min: 0,
+                                                    max: 10,
+
+                                                },
+                                                stacked: true,
+                                                gridLines: {
+                                                    color: '#888',
+                                                    drawOnChartArea: false
+                                                }
+                                            }],
+                                            yAxes: [{
+                                                ticks: {
+                                                    min: 0,
+                                                    max: 50,
+
+                                                    padding: 5
+                                                },
+                                                stacked: true,
+                                                gridLines: {
+                                                    color: '#888',
+                                                    drawOnChartArea: false
+                                                }
+                                            }]
+                                        }
+                                    }
+                                });
+
+
+                            },
+                            type: 'GET'
+                        });
+
+
+
+
+                    },
+                    type: 'GET'
+                });
+
+
+
+
+            },
+            type: 'GET'
+        });
+
+        });
+
+
+
+    function exportToCsv(filename, rows) {
+        var processRow = function (row) {
+            var finalVal = '';
+            for (var j = 0; j < row.length; j++) {
+                var innerValue = row[j] === null ? '' : row[j].toString();
+                if (row[j] instanceof Date) {
+                    innerValue = row[j].toLocaleString();
+                };
+                var result = innerValue.replace(/"/g, '""');
+                if (result.search(/("|,|\n)/g) >= 0)
+                    result = '"' + result + '"';
+                if (j > 0)
+                    finalVal += ',';
+                finalVal += result;
+            }
+            return finalVal + '\n';
+        };
+
+        var csvFile = '';
+        for (var i = 0; i < rows.length; i++) {
+            csvFile += processRow(rows[i]);
         }
 
-    });
+        var blob = new Blob([csvFile], { type: 'text/csv;charset=utf-8;' });
+        if (navigator.msSaveBlob) { // IE 10+
+            navigator.msSaveBlob(blob, filename);
+        } else {
+            var link = document.createElement("a");
+            if (link.download !== undefined) { // feature detection
+                // Browsers that support HTML5 download attribute
+                var url = URL.createObjectURL(blob);
+                link.setAttribute("href", url);
+                link.setAttribute("download", filename);
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        }
+    }
 
-
-
-    $(document).ready(function() {
-
-        var subFamilias = [];
-        var promedios = [];
-
-
-        $("#categoria").change(function() {
-            subFamilias = [];
-            promedios = [];
-
-            var categoria = $(this).val();
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                url: '/graficar',
-                type: 'post',
-                data: {categoria: categoria},
-                dataType: 'json',
-                success: function (response) {
-
-                    // subFamilias = [];
-                    // promedios = [];
-
-                    var ctx = document.getElementById("myChart").innerHTML = "";
-
-                    console.log(response);
-                    for (var i = 0; i < response.length; i++){
-                        subFamilias.push(response[i][0]);
-                        promedios.push(response[i][1]);
-                    }
-                    console.log(subFamilias);
-                    console.log(promedios);
-
-                    var ctx = document.getElementById("myChart");
-                    var myChart = new Chart(ctx, {
-                        type: 'bar',
-                        data: {
-                            labels: subFamilias,
-                            datasets: [{
-                                label: 'Dias promedio',
-                                data: promedios,
-                                backgroundColor: [
-                                    'rgba(255, 99, 132, 0.2)',
-                                    'rgba(54, 162, 235, 0.2)',
-                                    'rgba(255, 206, 86, 0.2)',
-                                    'rgba(75, 192, 192, 0.2)',
-                                    'rgba(153, 102, 255, 0.2)',
-                                    'rgba(255, 159, 64, 0.2)'
-                                ],
-                                borderColor: [
-                                    'rgba(255,99,132,1)',
-                                    'rgba(54, 162, 235, 1)',
-                                    'rgba(255, 206, 86, 1)',
-                                    'rgba(75, 192, 192, 1)',
-                                    'rgba(153, 102, 255, 1)',
-                                    'rgba(255, 159, 64, 1)'
-                                ],
-                                borderWidth: 1
-                            }]
-                        },
-                        options: {
-                            scales: {
-                                yAxes: [{
-                                    ticks: {
-                                        beginAtZero:true
-                                    }
-                                }]
-                            }
-                        }
-                    });
-
-                }
-
-            });
-        });
-    });
 </script>
-
-
-</html>

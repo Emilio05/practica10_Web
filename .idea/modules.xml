@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/inventarioequipos.iml" filepath="$PROJECT_DIR$/.idea/modules/inventarioequipos.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/inventarioequipos_main.iml" filepath="$PROJECT_DIR$/.idea/modules/inventarioequipos_main.iml" group="inventarioequipos" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/inventarioequipos_test.iml" filepath="$PROJECT_DIR$/.idea/modules/inventarioequipos_test.iml" group="inventarioequipos" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/topograpp.iml" filepath="$PROJECT_DIR$/.idea/modules/topograpp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/topograpp_main.iml" filepath="$PROJECT_DIR$/.idea/modules/topograpp_main.iml" group="topograpp" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/topograpp_test.iml" filepath="$PROJECT_DIR$/.idea/modules/topograpp_test.iml" group="topograpp" />
     </modules>
   </component>
 </project>
